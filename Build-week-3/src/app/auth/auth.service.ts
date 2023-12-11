@@ -30,7 +30,7 @@ utente!: Auth
         this.utente = loggedIn;
         localStorage.setItem('user', JSON.stringify(loggedIn));
         alert('Login effettuato');
-        this.router.navigate(['/home'])
+        this.router.navigate(['/'])
       }), 
       catchError(this.errors));
   }
@@ -47,7 +47,7 @@ const UserData: Auth = JSON.parse(user)
 if (this.jwtHelper.isTokenExpired(UserData.accessToken)) {
   this.router.navigate(['/login']);
 } else {
-  this.router.navigate(['/films']);
+  this.router.navigate(['/']);
 }
 this.authSbj.next(UserData);
 
@@ -78,7 +78,7 @@ getUserId():number|null{
 const user = localStorage.getItem('user')
 if(user){
   const userData : Auth = JSON.parse(user)
-  return userData.user.id
+  return userData.user.userId
 } return null
 
 }
