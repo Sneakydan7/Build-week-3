@@ -15,6 +15,7 @@ import { ViewComponent } from './components/view/view.component';
 import { EditComponent } from './components/edit/edit.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { LucaComponent } from './components/luca/luca.component';
 
 const routes :Route[] = [
   {
@@ -49,7 +50,8 @@ const routes :Route[] = [
     ViewComponent,
     EditComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LucaComponent
   ],
   imports: [
     BrowserModule , RouterModule.forRoot(routes) , FormsModule  
