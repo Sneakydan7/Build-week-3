@@ -20,6 +20,7 @@ const routes :Route[] = [
   {
     path:'',
     component:HomeComponent,
+    
   },
   {
     path:'view',
@@ -52,10 +53,14 @@ const routes :Route[] = [
     RegisterComponent
   ],
   imports: [
-    BrowserModule , RouterModule.forRoot(routes) , FormsModule  
+    BrowserModule , RouterModule.forRoot(routes) , FormsModule , HttpClientModule 
 
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
