@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Route } from '@angular/router';
-import { FormsModule  } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TokenInterceptor } from './auth/token.interceptor';
-import { HTTP_INTERCEPTORS , HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth/auth.guard';
 
 
@@ -15,28 +15,27 @@ import { ViewComponent } from './components/view/view.component';
 import { EditComponent } from './components/edit/edit.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { LucaComponent } from './components/luca/luca.component';
 
-const routes :Route[] = [
+const routes: Route[] = [
   {
-    path:'',
-    component:HomeComponent,
+    path: '',
+    component: HomeComponent,
   },
   {
-    path:'view',
-    component:ViewComponent
+    path: 'view',
+    component: ViewComponent
   },
   {
-    path:'edit',
-    component:EditComponent
+    path: 'edit',
+    component: EditComponent
   },
   {
-    path:'login',
-    component:LoginComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path:'register',
-    component:RegisterComponent
+    path: 'register',
+    component: RegisterComponent
   },
 
 ]
@@ -51,10 +50,9 @@ const routes :Route[] = [
     EditComponent,
     LoginComponent,
     RegisterComponent,
-    LucaComponent
   ],
   imports: [
-    BrowserModule , RouterModule.forRoot(routes) , FormsModule  
+    BrowserModule, RouterModule.forRoot(routes), FormsModule
 
   ],
   providers: [],
