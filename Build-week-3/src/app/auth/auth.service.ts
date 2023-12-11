@@ -78,7 +78,7 @@ getUserId():number|null{
 const user = localStorage.getItem('user')
 if(user){
   const userData : Auth = JSON.parse(user)
-  return userData.user.userId
+  return userData.user.id
 } return null
 
 }
