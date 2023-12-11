@@ -1,1 +1,58 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <div
+        class="collapse navbar-collapse justify-content-between"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              [routerLink]="['/']"
+              routerLinkActive="active"
+              *ngIf="user"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item" *ngIf="user">
+            <a
+              class="nav-link"
+              [routerLink]="['/edit']"
+              routerLinkActive="active"
+              >Add Posts</a
+            >
+          </li>
+          <li class="nav-item" *ngIf="!user">
+            <a
+              class="nav-link"
+              [routerLink]="['/login']"
+              routerLinkActive="active"
+              >Login</a
+            >
+          </li>
+          <li class="nav-item" *ngIf="!user">
+            <a
+              class="nav-link"
+              [routerLink]="['/register']"
+              routerLinkActive="active"
+              >Register</a
+            >
+          </li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <h6 class="ma-auto d-inline me-3" *ngIf="user">
+            Welcome back, {{ user.user.name }}!
+          </h6>
+          <button
+            type="button"
+            class="btn btn-danger ms-2 float-end"
+            *ngIf="user"
+            (click)="logout()"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>

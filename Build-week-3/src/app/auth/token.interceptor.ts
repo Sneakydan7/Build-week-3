@@ -6,13 +6,28 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
+import { take, switchMap } from 'rxjs';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private authSrv: AuthService) {}
+
+  newReq!: HttpRequest<any>;
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+    return this.authSrv.user$.pipe(
+      take(1),
+      switchMap(user => {
+        if(!user) {
+          return next.handle(request);
+          }
+          this.newReq = request.clone({
+            headers: request.headers.set('Authorization', `Bearer ${user.accessToken}`)
+          });
+          return next.handle(this.newReq)
+      })
+    )
   }
 }
