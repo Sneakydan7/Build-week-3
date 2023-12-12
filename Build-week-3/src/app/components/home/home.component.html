@@ -1,38 +1,47 @@
 <div class="container-fluid p-0">
-  <div class="row g-0 display-flex">
-    <div class="col-3 test text-center p-3 vh-100 custom-text-color">
+  <div class="row g-0 d-flex position-relative">
+    <div
+      id="side-bar"
+      class="col-md-2 col-lg-3 test text-center p-3 vh-100 custom-text-color sticky-top"
+    >
       <h1 class="">My Blog</h1>
       <div class="image-container">
         <img
           class="object-fit-contain profile-image"
-          src="https://st3.depositphotos.com/1017228/18878/i/450/depositphotos_188781580-stock-photo-handsome-cheerful-young-man-standing.jpg"
+          src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
           alt=""
         />
       </div>
-      <div>
+      <div class="introduction-box">
         <p class="mt-3">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic sunt
           corrupti quia fuga autem dolore, eius, aut placeat labore cum
           molestias, pariatur delectus dolorum! Ratione totam quibusdam
           temporibus adipisci! Reprehenderit.
         </p>
-        <div class="button-container">
-          <button class="btn btn-light rounded-circle">
-            <i class="bi bi-twitter-x text-success"></i>
-          </button>
-          <button class="btn btn-light rounded-circle">
-            <i class="bi bi-discord text-success"></i>
-          </button>
-          <button class="btn btn-light rounded-circle">
-            <i class="bi bi-github text-success"></i>
-          </button>
-          <button class="btn btn-light rounded-circle">
-            <i class="bi bi-linkedin text-success"></i>
-          </button>
-        </div>
+      </div>
+      <div class="button-container mt-5">
+        <button class="btn btn-light rounded-circle">
+          <i class="bi bi-twitter-x text-success"></i>
+        </button>
+        <button class="btn btn-light rounded-circle">
+          <i class="bi bi-discord text-success"></i>
+        </button>
+        <button class="btn btn-light rounded-circle">
+          <i class="bi bi-github text-success"></i>
+        </button>
+        <button class="btn btn-light rounded-circle">
+          <i class="bi bi-linkedin text-success"></i>
+        </button>
+      </div>
+      <div class="ref-list d-flex flex-column justify-content-center mt-5">
+        <a class="a"><i class="bi bi-houses-fill px-2"></i>Blog Home</a>
+        <a class="a"><i class="bi bi-bookmark-fill px-2"></i>Blog Post</a>
+        <a class="a"><i class="bi bi-people-fill px-2"></i>About Me</a>
+        <button type="button">Get in Touch</button>
       </div>
     </div>
-    <div class="col-9 text-center">
+    <div class="col-md-10 col-lg-9 text-center sticky-top">
       <div class="main-bg">
         <h1 class="fw-bold py-3">
           DevBlog - A Blog Template Made For Developers
@@ -46,7 +55,36 @@
           <button type="button" class="btn btn-success">Subscribe</button>
         </form>
       </div>
-      <div class="vh-100 bg-dark"></div>
+      <div class="vh-100 bg-dark overflow-scroll">
+        <!-- inizio card -->
+        <div class="card mb-3 w-75">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="https://media.istockphoto.com/id/1213374148/vector/missing-rubber-stamp-vector.jpg?s=612x612&w=0&k=20&c=Ij-YXxAHydym-tzQYVAoieBUA5b3rU1l2P0B49rFNMc="
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+                <p class="card-text">
+                  <small class="text-body-secondary"
+                    >Last updated 3 mins ago</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- fine card -->
+      </div>
     </div>
   </div>
 </div>

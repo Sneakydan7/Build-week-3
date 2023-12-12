@@ -20,8 +20,50 @@
     margin-inline: auto;
 }
 
+@media only screen and (max-width: 600px) {
+.image-container{
+    width: 50px;
+    height: 50px;
+}
+}
+@media only screen and (min-width: 600px) {
+    .image-container{
+        width: 70px;
+        height: 70px;
+    }
+
+}
+@media only screen and (min-width: 768px) {
+    .image-container{
+        width: 100px;
+        height: 100px;
+    }
+
+}
+@media only screen and (min-width: 992px) {
+    .image-container{
+        width: 140px;
+        height: 140px;
+    }
+
+}
+@media only screen and (min-width: 1200px) {
+    .image-container{
+        width: 170px;
+        height: 170px;
+    }
+
+}
+@media only screen and (min-width: 2400px){
+    .image-container{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+
 .profile-image{
-    width: 200%;
     object-fit: contain;
 }
 
@@ -49,4 +91,48 @@ button {
 
 i {
     font-size: larger;
+}
+
+
+.ref-list a{
+    margin-inline: auto;
+    width: 50%;
+    text-align: center;
+    font-size: larger;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.ref-list a:first-of-type{
+    color: #383d33;
+}
+
+.ref-list a:hover{
+    font-weight: bold;
+    transform: scale(1.09);
+}
+
+.ref-list button {
+    border-radius: 10px;
+    background-color: #3c4436;
+    color: white;
+    margin-top: 1.5rem;
+    margin-inline: auto;
+    padding-top: 5px; 
+    padding-bottom: 5px;
+    width: 40%;
+    transition: all 0.5;
+}
+
+.ref-list button:hover{
+    font-weight: bold;
+    box-shadow: #37462c 3px 3px 6px 0px;
+    transform: scale(1.05);
+}
+
+#side-bar{
+    box-shadow: #37462c 0px -10px 11px 2px inset;
 }
