@@ -5,5 +5,7 @@ export interface Auth {
     email: string;
     name: string;
     lastName: string;
+    biografia: string;
+    image:string
   };
 }

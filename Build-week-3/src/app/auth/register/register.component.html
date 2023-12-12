@@ -14,23 +14,23 @@
           id="name"
           class="form-control"
           pattern="^[a-zA-Z]+$"
-        />
-        <div
-          *ngIf="
+          [ngClass]="{
+            'text-danger': registerForm.get('name')?.value?.length < 3
+          }"
+          title="
+            {{
             registerForm.get('name')?.hasError('required') &&
             registerForm.get('name')?.touched
-          "
-        >
-          Nome è obbligatorio
-        </div>
-        <div
-          *ngIf="
+              ? 'Nome è obbligatorio'
+              : ''
+          }}
+            {{
             registerForm.get('name')?.hasError('minlength') &&
             registerForm.get('name')?.touched
-          "
-        >
-          Il nome deve contenere almeno 2 caratteri
-        </div>
+              ? 'Il nome deve contenere almeno 2 caratteri'
+              : ''
+          }}"
+        />
 
         <label for="cognome">Cognome</label>
         <input
@@ -39,23 +39,23 @@
           id="lastName"
           class="form-control"
           pattern="^[a-zA-Z]+$"
-        />
-        <div
-          *ngIf="
+          [ngClass]="{
+            'text-error': registerForm.get('lastName')?.value?.length < 3
+          }"
+          title="
+            {{
             registerForm.get('lastName')?.hasError('required') &&
             registerForm.get('lastName')?.touched
-          "
-        >
-          Cognome è obbligatorio
-        </div>
-        <div
-          *ngIf="
+              ? 'Cognome è obbligatorio'
+              : ''
+          }}
+            {{
             registerForm.get('lastName')?.hasError('minlength') &&
             registerForm.get('lastName')?.touched
-          "
-        >
-          Il cognome deve contenere almeno 2 caratteri
-        </div>
+              ? 'Il cognome deve contenere almeno 2 caratteri'
+              : ''
+          }}"
+        />
       </div>
 
       <div class="form-group">
@@ -65,23 +65,20 @@
           formControlName="email"
           id="email"
           class="form-control"
-        />
-        <div
-          *ngIf="
+          title="
+            {{
             registerForm.get('email')?.hasError('required') &&
             registerForm.get('email')?.touched
-          "
-        >
-          Email è obbligatoria
-        </div>
-        <div
-          *ngIf="
+              ? 'Email è obbligatoria'
+              : ''
+          }}
+            {{
             registerForm.get('email')?.hasError('email') &&
             registerForm.get('email')?.touched
-          "
-        >
-          Inserisci un indirizzo email valido
-        </div>
+              ? 'Inserisci un indirizzo email valido'
+              : ''
+          }}"
+        />
       </div>
 
       <div class="form-group">
@@ -92,22 +89,37 @@
           id="password"
           class="form-control"
         />
-        <div
-          *ngIf="
-            registerForm.get('password')?.hasError('required') &&
-            registerForm.get('password')?.touched
-          "
-        >
-          La password è obbligatoria
-        </div>
-        <div
-          *ngIf="
-            registerForm.get('password')?.hasError('minlength') &&
-            registerForm.get('password')?.touched
-          "
-        >
-          La password deve contenere almeno 8 caratteri
-        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="biografia">Biografia</label>
+        <textarea
+          formControlName="biografia"
+          id="biografia"
+          class="form-control"
+          title="
+            {{
+            registerForm.get('biografia')?.hasError('required') &&
+            registerForm.get('biografia')?.touched
+              ? 'La biografia è obbligatoria'
+              : ''
+          }}
+            {{
+            registerForm.get('biografia')?.hasError('maxlength') &&
+            registerForm.get('biografia')?.touched
+              ? 'La biografia non può superare i 100 caratteri'
+              : ''
+          }}"
+        ></textarea>
+      </div>
+      <div>
+        <label for="imageUrl">Image URL:</label>
+        <input
+          type="text"
+          id="imageUrl"
+          formControlName="image"
+          placeholder="Enter image URL"
+        />
       </div>
 
       <button

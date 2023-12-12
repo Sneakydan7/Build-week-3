@@ -55,7 +55,8 @@ export class AuthService {
     password: string;
     name: string;
     lastName: string;
-    pfp: string;
+    image: string;
+    biografia: string;
   }) {
     return this.http.post(`${this.URL}/register`, data).pipe(
       tap(() => {
