@@ -20,6 +20,14 @@
       "name": "cosmin",
       "lastName": "petrea",
       "id": 3
+
+    },
+    {
+      "email": "luca@utzeri.it",
+      "password": "$2a$10$/.bILTVzlsZPWIKewqlwM.OnaEhXbL80e2tX1m.cacrZIjR3aLkOK",
+      "name": "Luca",
+      "lastName": "Utzeri",
+      "id": 2
     }
   ],
   "posts": [

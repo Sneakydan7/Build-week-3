@@ -64,4 +64,4 @@ const routes: Route[] = [
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
