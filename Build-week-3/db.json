@@ -6,6 +6,13 @@
       "name": "daniele",
       "lastName": "cagnoni",
       "id": 1
+    },
+    {
+      "email": "123@123.com",
+      "password": "$2a$10$vOwUROC7K9V72q3U3qhTUulSWsFSXJzOir1p5aYQFEVMml7xlLrZG",
+      "name": "kavidu",
+      "lastName": "francesco",
+      "id": 2
     }
   ],
   "posts": [
