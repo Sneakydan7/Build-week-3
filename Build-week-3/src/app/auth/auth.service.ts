@@ -58,8 +58,8 @@ export class AuthService {
     image: string;
     biografia: string;
   }) {
-    return this.http.post(`${this.URL}/register`, data).pipe(
-      tap(() => {
+    return this.http.post<Auth>(`${this.URL}/register`, data).pipe(
+      tap((loggedIn) => {
         this.router.navigate(['/login']), catchError(this.errors);
       })
     );
