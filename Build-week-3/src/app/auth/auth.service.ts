@@ -30,7 +30,7 @@ utente!: Auth
         this.utente = loggedIn;
         localStorage.setItem('user', JSON.stringify(loggedIn));
         alert('Login effettuato');
-        this.router.navigate(['/home'])
+        this.router.navigate(['/'])
       }), 
       catchError(this.errors));
   }
@@ -47,7 +47,7 @@ const UserData: Auth = JSON.parse(user)
 if (this.jwtHelper.isTokenExpired(UserData.accessToken)) {
   this.router.navigate(['/login']);
 } else {
-  this.router.navigate(['/films']);
+  this.router.navigate(['/']);
 }
 this.authSbj.next(UserData);
 

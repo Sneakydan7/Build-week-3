@@ -5,8 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth/auth.guard';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -20,27 +19,24 @@ const routes: Route[] = [
   {
     path: '',
     component: HomeComponent,
-
   },
   {
     path: 'view',
-    component: ViewComponent
+    component: ViewComponent,
   },
   {
     path: 'edit',
-    component: EditComponent
+    component: EditComponent,
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
-
-]
-
+];
 
 @NgModule({
   declarations: [
@@ -53,14 +49,19 @@ const routes: Route[] = [
     RegisterComponent,
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(routes), FormsModule, HttpClientModule
-
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptor,
-    multi: true
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

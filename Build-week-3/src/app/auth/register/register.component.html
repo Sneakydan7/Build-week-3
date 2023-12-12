@@ -1,60 +1,122 @@
 <div class="row">
-    <div class="container">
-      <form
-        #form="ngForm"
-        class="px-3 py-4 rounded-3 text-white"
-        (ngSubmit)="register(form)"
-      >
-        <div class="form-group mt-2">
-          <label for="nome">Nome</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            class="form-control"
-            required
-            ngModel
-          />
-          <label for="cognome">Cognome</label>
-  
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            class="form-control"
-            required
-            ngModel
-          />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            class="form-control"
-            required
-            ngModel
-          />
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            class="form-control"
-            required
-            ngModel
-          />
-        </div>
-        <button
-          type="submit"
-          [disabled]="form.invalid"
-          class="btn btn-primary mt-4 w-100"
+  <div class="container">
+    <form
+      *ngIf="registerForm"
+      [formGroup]="registerForm"
+      class="px-3 py-4 rounded-3 text-white"
+      (ngSubmit)="register()"
+    >
+      <div class="form-group mt-2">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          formControlName="name"
+          id="name"
+          class="form-control"
+          pattern="^[a-zA-Z]+$"
+        />
+        <div
+          *ngIf="
+            registerForm.get('name')?.hasError('required') &&
+            registerForm.get('name')?.touched
+          "
         >
-          Registrati
-        </button>
-      </form>
-    </div>
+          Nome è obbligatorio
+        </div>
+        <div
+          *ngIf="
+            registerForm.get('name')?.hasError('minlength') &&
+            registerForm.get('name')?.touched
+          "
+        >
+          Il nome deve contenere almeno 2 caratteri
+        </div>
+
+        <label for="cognome">Cognome</label>
+        <input
+          type="text"
+          formControlName="lastName"
+          id="lastName"
+          class="form-control"
+          pattern="^[a-zA-Z]+$"
+        />
+        <div
+          *ngIf="
+            registerForm.get('lastName')?.hasError('required') &&
+            registerForm.get('lastName')?.touched
+          "
+        >
+          Cognome è obbligatorio
+        </div>
+        <div
+          *ngIf="
+            registerForm.get('lastName')?.hasError('minlength') &&
+            registerForm.get('lastName')?.touched
+          "
+        >
+          Il cognome deve contenere almeno 2 caratteri
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          formControlName="email"
+          id="email"
+          class="form-control"
+        />
+        <div
+          *ngIf="
+            registerForm.get('email')?.hasError('required') &&
+            registerForm.get('email')?.touched
+          "
+        >
+          Email è obbligatoria
+        </div>
+        <div
+          *ngIf="
+            registerForm.get('email')?.hasError('email') &&
+            registerForm.get('email')?.touched
+          "
+        >
+          Inserisci un indirizzo email valido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          id="password"
+          class="form-control"
+        />
+        <div
+          *ngIf="
+            registerForm.get('password')?.hasError('required') &&
+            registerForm.get('password')?.touched
+          "
+        >
+          La password è obbligatoria
+        </div>
+        <div
+          *ngIf="
+            registerForm.get('password')?.hasError('minlength') &&
+            registerForm.get('password')?.touched
+          "
+        >
+          La password deve contenere almeno 8 caratteri
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="registerForm.invalid"
+        class="btn btn-primary mt-4 w-100"
+      >
+        Registrati
+      </button>
+    </form>
   </div>
+</div>
