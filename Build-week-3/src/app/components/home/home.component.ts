@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Posts } from 'src/app/models/posts';
+import { PostsService } from 'src/app/service/posts.service';
+import { HttpClient } from '@angular/common/http';
+
+
+
 
 @Component({
   selector: 'app-home',
@@ -6,10 +13,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+posts: Posts[] | undefined
+userId: number = 0
 
-  constructor() { }
+  constructor(private postsSrv: PostsService , private authSrv: AuthService) { }
 
   ngOnInit(): void {
+ this.userId = this.postsSrv.getUserId();
+ this.postsSrv.getPosts().subscribe((posts: Posts[]) => {
+  this.posts = posts
+})
+
+
   }
 
 }
