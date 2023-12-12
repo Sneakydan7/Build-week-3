@@ -1,6 +1,5 @@
 {
   "users": [
-    
     {
       "email": "giannicabiddu@gmail.com",
       "password": "$2a$10$scBV9e4yWY3tyH46xdENYusOlxKXRPfkRDuM6jR1u5QO7QLhHPO/a",
@@ -9,6 +8,15 @@
       "biografia": "aaa",
       "image": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png",
       "id": 2
+    },
+    {
+      "email": "daniele.010@hotmail.it",
+      "password": "$2a$10$1T3mgDkAPpPExxbRFj3h8Oy//Rse1U4zoOHsm.5XWFNbV493gSWiy",
+      "name": "Daniele",
+      "lastName": "Cagnoni",
+      "biografia": "Full-stack dev in training!",
+      "image": null,
+      "id": 3
     }
   ],
   "posts": [
