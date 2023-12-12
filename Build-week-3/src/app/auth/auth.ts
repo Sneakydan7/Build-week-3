@@ -1,10 +1,9 @@
 export interface Auth {
-    accessToken:string
-    user:{
-        id:number
-        email:string
-        name:string
-        lastName:string
-        
-    }
+  accessToken: string;
+  user: {
+    userId: number;
+    email: string;
+    name: string;
+    lastName: string;
+  };
 }
