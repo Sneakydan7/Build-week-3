@@ -47,8 +47,6 @@ export class HomeComponent implements OnInit {
 
   rotateImage() {
     this.showOtherImage = !this.showOtherImage;
-
-    // Toggle the rotation state
     this.rotateState = this.rotateState === 'initial' ? 'rotated' : 'initial';
   }
 
