@@ -1,56 +1,158 @@
-.test {
-  background-color: #5f6f52;
+.sidebar-color{
+    background-color: #4E6C50;
 }
 
-.tets-text {
-  color: white;
+.image-container{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 50%;
+    border: solid 5px  #395144;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    object-fit: center;
+    margin-inline: auto;
 }
 
-.image-container {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  border-radius: 50%;
-  border: solid 5px #3c4436;
-  width: 250px;
-  height: 250px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  object-fit: center;
-  margin-inline: auto;
+@media only screen and (max-width: 600px) {
+.image-container{
+    width: 50px;
+    height: 50px;
+}
+}
+@media only screen and (min-width: 600px) {
+    .image-container{
+        width: 70px;
+        height: 70px;
+    }
+
+}
+@media only screen and (min-width: 768px) {
+    .image-container{
+        width: 100px;
+        height: 100px;
+    }
+
+}
+@media only screen and (min-width: 992px) {
+    .image-container{
+        width: 140px;
+        height: 140px;
+    }
+
+}
+@media only screen and (min-width: 1200px) {
+    .image-container{
+        width: 170px;
+        height: 170px;
+    }
+
+}
+@media only screen and (min-width: 2400px){
+    .image-container{
+        width: 200px;
+        height: 200px;
+    }
 }
 
-.profile-image {
-  width: 200%;
-  object-fit: contain;
+.profile-image{
+    width: 100%;
+    scale: 130%;
+    object-fit: contain;
 }
 
-.custom-text-color {
-  color: white;
+.custom-text-color{
+    color: white;
 }
 
-.main-bg {
-  background-color: beige;
+.main-bg{
+    background-color: #395144;
+    color: #F0EBCE;
 }
 
-.button-container {
-  margin-top: 2rem;
-  margin-inline: auto;
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 10px;
-  padding: 5px;
+.main-bg h5 {
+    color: #AA8B56;
+}
+
+.button-container{
+    margin-top: 2rem;
+    margin-inline: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 button {
-  border: solid 3px #3c4436;
+    background-color: #F0EBCE;
+    border:solid 3px  #395144;
+}
+
+button > i{
+    color: #395144;
 }
 
 i {
-  font-size: larger;
+    font-size: larger;
 }
-// ---------------------- animatione fotoProfilo
+
+.top{
+    top: 56px;
+}
+
+.ref-list a{
+    margin-inline: auto;
+    width: 50%;
+    text-align: center;
+    font-size: larger;
+    text-decoration: none;
+    color: #F4EEE0;
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.ref-list a:first-of-type{
+    color: #AA8B56;
+}
+
+.ref-list a:hover{
+    font-weight: bold;
+    transform: scale(1.09);
+}
+
+.ref-list button {
+    border-radius: 10px;
+    background-color: #395144;
+    color: #AA8B56;
+    margin-top: 1.5rem;
+    margin-inline: auto;
+    padding-top: 5px; 
+    padding-bottom: 5px;
+    width: 40%;
+    transition: all 0.5;
+}
+
+.ref-list button:hover{
+    font-weight: bold;
+    box-shadow: #395144 3px 3px 6px 0px;
+    transform: scale(1.05);
+}
+
+#side-bar{
+    box-shadow: #395144 0px -10px 11px 2px inset;
+}
+
+i{
+    font-size: larger;
+    color: #AA8B56;
+}
+
+
+// // animatione fotoProfilo
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -64,11 +166,6 @@ i {
   cursor: pointer;
   overflow: hidden;
   position: relative;
-}
-
-.profile-image {
-  width: 100%;
-  height: auto;
 }
 
 @keyframes fadeIn {
@@ -87,4 +184,10 @@ i {
 .rotate {
   animation: rotate 1s linear;
 }
-// ---------------------------------------------
+
+// card styling
+
+.card{
+    background-color: #F0EBCE;
+}
+

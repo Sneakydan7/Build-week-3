@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { Posts } from 'src/app/models/posts';
 import { PostsService } from 'src/app/service/posts.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 import {
   trigger,
   state,
@@ -10,7 +11,7 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-home',
@@ -55,6 +56,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+
   rotateImage() {
     this.showOtherImage = !this.showOtherImage;
     this.rotateState = this.rotateState === 'initial' ? 'rotated' : 'initial';
@@ -65,4 +67,5 @@ export class HomeComponent implements OnInit {
       this.showOtherImage = true;
     }
   }
+
 }

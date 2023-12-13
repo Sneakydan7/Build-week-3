@@ -1,10 +1,15 @@
-button {
+.nav-button {
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset;
 }
 
-button:hover {
+.nav-button:hover {
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.nav-color{
+  background-color: #272829;
+  color: #f4eee0;
 }
