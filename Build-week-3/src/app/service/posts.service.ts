@@ -8,28 +8,25 @@ import { Auth } from '../auth/auth';
 })
 export class PostsService {
 URL = environment.apiURL
-posts!:Posts[]
-id:number = 0
+
 
 
 
   constructor(private http:HttpClient) { }
 
+getPosts(){
+  return this.http.get<Posts[]>( `${this.URL}/posts`)
+}
 
 
 getUserId():number{
 const user = localStorage.getItem('user')
 if(user){
   const userData : Auth = JSON.parse(user)
-  return userData.user.id
-} else {
-  return 0;
-}}
+  return userData.user.userId
+} return 0;
 
 
-
-
-
-
+}
 
 }

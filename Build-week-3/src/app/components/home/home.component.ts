@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { Posts } from 'src/app/models/posts';
 import { PostsService } from 'src/app/service/posts.service';
 import { HttpClient } from '@angular/common/http';
+<<<<<<< HEAD
 import { environment } from 'src/environments/environment';
 import {
   trigger,
@@ -11,6 +12,11 @@ import {
   transition,
   animate,
 } from '@angular/animations';
+=======
+
+
+
+>>>>>>> parent of cc5f645 (Merge branch 'develop' into branch-cosmin)
 
 @Component({
   selector: 'app-home',
@@ -31,25 +37,24 @@ import {
   ],
 })
 export class HomeComponent implements OnInit {
-posts!: Posts[] 
+posts: Posts[] | undefined
 userId: number = 0
-id:number = 0
-URL = environment.apiURL
 
+<<<<<<< HEAD
 rotateState: string = 'initial';
 showOtherImage: boolean = false;
 
   constructor(private postsSrv: PostsService , private authSrv: AuthService , private http:HttpClient) { }
+=======
+  constructor(private postsSrv: PostsService , private authSrv: AuthService) { }
+>>>>>>> parent of cc5f645 (Merge branch 'develop' into branch-cosmin)
 
   ngOnInit(): void {
- this.id = this.postsSrv.getUserId();
- console.log(this.id)
- this.http.get<Posts[]>( `${this.URL}/posts`).subscribe((res) => {
-  let update:Posts[] = res.filter((user) => user.userId === this.id)
-this.posts = update
-console.log(this.posts)
-return this.posts
+ this.userId = this.postsSrv.getUserId();
+ this.postsSrv.getPosts().subscribe((posts: Posts[]) => {
+  this.posts = posts
 })
+<<<<<<< HEAD
  console.log(this.posts)
 
 }
@@ -58,6 +63,10 @@ return this.posts
   rotateImage() {
     this.showOtherImage = !this.showOtherImage;
     this.rotateState = this.rotateState === 'initial' ? 'rotated' : 'initial';
+=======
+
+
+>>>>>>> parent of cc5f645 (Merge branch 'develop' into branch-cosmin)
   }
 
   onRotateStart(event: any) {
