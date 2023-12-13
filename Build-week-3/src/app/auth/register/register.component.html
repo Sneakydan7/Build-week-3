@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="row">
+<main>
+  <div class="container d-flex align-items-center justify-content-center">
     <form
       *ngIf="registerForm"
       [formGroup]="registerForm"
@@ -7,7 +7,7 @@
       (ngSubmit)="register()"
     >
       <div class="form-group mt-2">
-        <label for="nome">Nome</label>   
+        <label for="nome">Nome</label>
         <input
           type="text"
           formControlName="name"
@@ -18,13 +18,13 @@
             'text-danger': registerForm.get('name')?.value?.length < 3
           }"
           title="
-            {{
+              {{
             registerForm.get('name')?.hasError('required') &&
             registerForm.get('name')?.touched
               ? 'Nome è obbligatorio'
               : ''
           }}
-            {{
+              {{
             registerForm.get('name')?.hasError('minlength') &&
             registerForm.get('name')?.touched
               ? 'Il nome deve contenere almeno 2 caratteri'
@@ -44,13 +44,13 @@
             'text-error': registerForm.get('lastName')?.value?.length < 3
           }"
           title="
-            {{
+              {{
             registerForm.get('lastName')?.hasError('required') &&
             registerForm.get('lastName')?.touched
               ? 'Cognome è obbligatorio'
               : ''
           }}
-            {{
+              {{
             registerForm.get('lastName')?.hasError('minlength') &&
             registerForm.get('lastName')?.touched
               ? 'Il cognome deve contenere almeno 2 caratteri'
@@ -90,13 +90,13 @@
           id="email"
           class="form-control"
           title="
-            {{
+              {{
             registerForm.get('email')?.hasError('required') &&
             registerForm.get('email')?.touched
               ? 'Email è obbligatoria'
               : ''
           }}
-            {{
+              {{
             registerForm.get('email')?.hasError('email') &&
             registerForm.get('email')?.touched
               ? 'Inserisci un indirizzo email valido'
@@ -122,13 +122,13 @@
           id="biografia"
           class="form-control"
           title="
-            {{
+              {{
             registerForm.get('biografia')?.hasError('required') &&
             registerForm.get('biografia')?.touched
               ? 'La biografia è obbligatoria'
               : ''
           }}
-            {{
+              {{
             registerForm.get('biografia')?.hasError('maxlength') &&
             registerForm.get('biografia')?.touched
               ? 'La biografia non può superare i 100 caratteri'
@@ -167,4 +167,4 @@
       </button>
     </form>
   </div>
-</div>
+</main>
