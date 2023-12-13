@@ -17,6 +17,7 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup | null = null;
+  bioLength: number = 0;
 
   constructor(
     private authSrv: AuthService,

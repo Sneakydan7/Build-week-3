@@ -6,6 +6,6 @@ export interface Auth {
     name: string;
     lastName: string;
     biografia: string;
-    image:string
+    image: string;
   };
 }

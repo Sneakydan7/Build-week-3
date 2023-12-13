@@ -4,13 +4,24 @@
       <h1 class="">My Blog</h1>
       <div
         class="image-container"
+<<<<<<< HEAD
+=======
+        [@rotateImage]="rotateState"
+        (@rotateImage.start)="onRotateStart($event)"
+        (click)="rotateImage()"
+>>>>>>> develop-working
       >
         <!-- <img
           class="object-fit-contain profile-image"
-          src="https://st3.depositphotos.com/1017228/18878/i/450/depositphotos_188781580-stock-photo-handsome-cheerful-young-man-standing.jpg"
+          [src]="
+            showOtherImage
+              ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmx4iDIRFHiqVlS_QFaQ2hHEgIc39uz0bFHOcNc_MZSw&s'
+              : authSrv.utente.user.image
+          "
           alt=""
         /> -->
       </div>
+
       <div>
         <p class="mt-3">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic sunt
@@ -45,12 +56,18 @@
         </h5>
      
       </div>
+<<<<<<< HEAD
     <div class="container overflow-y-auto vh-100 ">
         <div class=" bg-dark row px-5">
+=======
+      <div class="container overflow-y-auto vh-100">
+        <div class="bg-dark row px-5">
+>>>>>>> develop-working
           <div class="col-12" *ngFor="let elem of posts">
             <div class="card mb-3 mt-5">
               <div class="row g-0">
                 <div class="col-md-4">
+<<<<<<< HEAD
                   <img src="..." class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
@@ -58,17 +75,35 @@
                     <h5 class="card-title">{{elem.title}}</h5>
                     <p class="card-text">{{elem.body}}</p>
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+=======
+                  <img src="..." class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ elem.title }}</h5>
+                    <p class="card-text">{{ elem.body }}</p>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >Last updated 3 mins ago</small
+                      >
+                    </p>
+>>>>>>> develop-working
                   </div>
                 </div>
               </div>
             </div>
           </div>
+<<<<<<< HEAD
   
   
   
   
         </div>
     </div>
+=======
+        </div>
+      </div>
+>>>>>>> develop-working
     </div>
   </div>
 </div>

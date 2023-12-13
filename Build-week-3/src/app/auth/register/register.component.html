@@ -13,8 +13,23 @@
           id="name"
           class="form-control"
           pattern="^[a-zA-Z]+$"
-       
-        
+          [ngClass]="{
+            'text-danger': registerForm.get('name')?.value?.length < 3
+          }"
+          title="
+            {{
+            registerForm.get('name')?.hasError('required') &&
+            registerForm.get('name')?.touched
+              ? 'Nome è obbligatorio'
+              : ''
+          }}
+            {{
+            registerForm.get('name')?.hasError('minlength') &&
+            registerForm.get('name')?.touched
+              ? 'Il nome deve contenere almeno 2 caratteri'
+              : ''
+          }}"
+          onkeydown="return event.key < '0' || event.key > '9'"
         />
 
         <label for="cognome">Cognome</label>
@@ -24,8 +39,23 @@
           id="lastName"
           class="form-control"
           pattern="^[a-zA-Z]+$"
-          
-         
+          [ngClass]="{
+            'text-error': registerForm.get('lastName')?.value?.length < 3
+          }"
+          title="
+            {{
+            registerForm.get('lastName')?.hasError('required') &&
+            registerForm.get('lastName')?.touched
+              ? 'Cognome è obbligatorio'
+              : ''
+          }}
+            {{
+            registerForm.get('lastName')?.hasError('minlength') &&
+            registerForm.get('lastName')?.touched
+              ? 'Il cognome deve contenere almeno 2 caratteri'
+              : ''
+          }}"
+          onkeydown="return event.key < '0' || event.key > '9'"
         />
       </div>
 
@@ -59,15 +89,27 @@
           
         ></textarea>
       </div>
-      <!-- <div class="mt-4">
+      <div class="mt-4">
         <label for="imageUrl">Image URL:</label>
         <input
           type="text"
           id="imageUrl"
           formControlName="image"
           placeholder="Enter image URL"
+          class="form-control"
         />
-      </div> -->
+      </div>
+      <div class="form-group form-check mt-3">
+        <input
+          type="checkbox"
+          formControlName="privacyAccepted"
+          class="form-check-input"
+          id="privacyAccepted"
+        />
+        <label class="form-check-label" for="privacyAccepted">
+          Accetta informative sulla privacy
+        </label>
+      </div>
       <div class="form-group form-check mt-3">
         <input
           type="checkbox"
