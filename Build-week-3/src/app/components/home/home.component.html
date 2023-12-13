@@ -8,15 +8,18 @@
         (@rotateImage.start)="onRotateStart($event)"
         (click)="rotateImage()"
       >
-        <!-- <img
+        <img
           class="object-fit-contain profile-image"
+          *ngIf="!this.userImg"
           [src]="
             showOtherImage
               ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmx4iDIRFHiqVlS_QFaQ2hHEgIc39uz0bFHOcNc_MZSw&s'
-              : authSrv.utente.user.image
+              : 'https://www.ultima-affinity.com/on/demandware.static/-/Library-Sites-Ultima-it-IsolateLibrary/default/dw434d9e6c/petmoji-images/miniatures/dog/golden_sh_miniature.jpg'
           "
           alt=""
-        /> -->
+        />
+
+        <img src="{{ this.userImg }}" alt="img" *ngIf="this.userImg" />
       </div>
 
       <div>

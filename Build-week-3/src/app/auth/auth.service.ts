@@ -80,6 +80,15 @@ export class AuthService {
     return null;
   }
 
+  getUserImage(): string | null {
+    const image = localStorage.getItem('user');
+    if (image) {
+      const userData: Auth = JSON.parse(image);
+      return userData.user.image;
+    }
+    return null;
+  }
+
   private errors(err: any) {
     console.log(err);
     switch (err.error) {

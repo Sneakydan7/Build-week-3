@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
   posts: Posts[] | undefined;
   id: number = 0;
   URL = environment.apiURL;
+  userImg!: string | null;
 
   rotateState: string = 'initial';
   showOtherImage: boolean = false;
@@ -46,6 +47,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.postsSrv.getUserId();
+    this.userImg = this.authSrv.getUserImage();
     console.log(this.id);
     this.http.get<Posts[]>(`${this.URL}/posts`).subscribe((res) => {
       let update: Posts[] = res.filter((user) => user.userId === this.id);
