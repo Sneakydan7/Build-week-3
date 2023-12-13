@@ -41,12 +41,15 @@ export class RegisterComponent implements OnInit {
         //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z@$!%*?&]{8,}$/
         // ),
       ]),
+      gender: new FormControl('', [Validators.required]),
+
       biografia: new FormControl(null, [
         Validators.required,
         Validators.maxLength(100),
         Validators.minLength(0),
       ]),
       image: new FormControl(null, [Validators.pattern(/^https?:\/\//i)]),
+      privacyAccepted: new FormControl(false, [Validators.requiredTrue]),
     });
   }
 
