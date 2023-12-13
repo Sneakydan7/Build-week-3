@@ -27,11 +27,7 @@
           >Add Posts</a
         >
       </li>
-      <li class="nav-item" *ngIf="user">
-        <a class="nav-link" [routerLink]="['/view']" routerLinkActive="active"
-          >View Posts</a
-        >
-      </li>
+     
       <li class="nav-item" *ngIf="!user">
         <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active"
           >Login</a
@@ -58,7 +54,7 @@
       >
         <i class="fas fa-power-off"></i>
       </button>
-      <button></button>
+     
     </div>
   </div>
 </nav>

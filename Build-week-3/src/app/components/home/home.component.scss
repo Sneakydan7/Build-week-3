@@ -2,7 +2,9 @@
     background-color: #4E6C50;
 }
 
-
+.shadow-box{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
 .image-container{
     margin-top: 2rem;
     margin-bottom: 2rem;
