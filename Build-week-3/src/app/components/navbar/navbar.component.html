@@ -1,4 +1,7 @@
-<nav class="navbar bg-dark text-white navbar-expand-lg position-fixed w-100" data-bs-theme="dark">
+<nav
+  class="navbar nav-color navbar-expand-lg position-fixed w-100"
+  data-bs-theme="dark"
+>
   <div class="container">
     <div
       class="collapse navbar-collapse justify-content-between"
@@ -48,7 +51,7 @@
         </h6>
         <button
           type="button"
-          class="btn btn-danger ms-2 float-end rounded-5"
+          class="btn btn-danger ms-2 float-end rounded-5 nav-button"
           *ngIf="user"
           (click)="logout()"
         >

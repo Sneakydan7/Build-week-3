@@ -31,28 +31,28 @@ import {
   ],
 })
 export class HomeComponent implements OnInit {
-posts!: Posts[] 
-userId: number = 0
-id:number = 0
-URL = environment.apiURL
+  posts!: Posts[]
+  userId: number = 0
+  id: number = 0
+  URL = environment.apiURL
 
-rotateState: string = 'initial';
-showOtherImage: boolean = false;
+  rotateState: string = 'initial';
+  showOtherImage: boolean = false;
 
-  constructor(private postsSrv: PostsService , private authSrv: AuthService , private http:HttpClient) { }
+  constructor(private postsSrv: PostsService, public authSrv: AuthService, private http: HttpClient) { }
 
   ngOnInit(): void {
- this.id = this.postsSrv.getUserId();
- console.log(this.id)
- this.http.get<Posts[]>( `${this.URL}/posts`).subscribe((res) => {
-  let update:Posts[] = res.filter((user) => user.userId === this.id)
-this.posts = update
-console.log(this.posts)
-return this.posts
-})
- console.log(this.posts)
+    this.id = this.postsSrv.getUserId();
+    console.log(this.id)
+    this.http.get<Posts[]>(`${this.URL}/posts`).subscribe((res) => {
+      let update: Posts[] = res.filter((user) => user.userId === this.id)
+      this.posts = update
+      console.log(this.posts)
+      return this.posts
+    })
+    console.log(this.posts)
 
-}
+  }
 
 
   rotateImage() {
@@ -65,4 +65,5 @@ return this.posts
       this.showOtherImage = true;
     }
   }
+
 }

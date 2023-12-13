@@ -1,16 +1,12 @@
-.test{
-    background-color: #5F6F52;
-}
-
-.tets-text{
-    color: white;
+.sidebar-color{
+    background-color: #4E6C50;
 }
 
 .image-container{
     margin-top: 3rem;
     margin-bottom: 3rem;
     border-radius: 50%;
-    border: solid 5px #3c4436;
+    border: solid 5px  #395144;
     width: 250px;
     height: 250px;
     overflow: hidden;
@@ -61,10 +57,9 @@
     }
 }
 
-
-
 .profile-image{
-    width: 200%;
+    width: 100%;
+    scale: 130%;
     object-fit: contain;
 }
 
@@ -73,7 +68,12 @@
 }
 
 .main-bg{
-    background-color: beige;
+    background-color: #395144;
+    color: #F0EBCE;
+}
+
+.main-bg h5 {
+    color: #AA8B56;
 }
 
 .button-container{
@@ -87,7 +87,12 @@
 }
 
 button {
-    border:solid 3px #3c4436;
+    background-color: #F0EBCE;
+    border:solid 3px  #395144;
+}
+
+button > i{
+    color: #395144;
 }
 
 i {
@@ -104,14 +109,14 @@ i {
     text-align: center;
     font-size: larger;
     text-decoration: none;
-    color: white;
+    color: #F4EEE0;
     font-weight: bold;
     margin-top: 1rem;
     cursor: pointer;
 }
 
 .ref-list a:first-of-type{
-    color: #383d33;
+    color: #AA8B56;
 }
 
 .ref-list a:hover{
@@ -121,8 +126,8 @@ i {
 
 .ref-list button {
     border-radius: 10px;
-    background-color: #3c4436;
-    color: white;
+    background-color: #395144;
+    color: #AA8B56;
     margin-top: 1.5rem;
     margin-inline: auto;
     padding-top: 5px; 
@@ -133,22 +138,21 @@ i {
 
 .ref-list button:hover{
     font-weight: bold;
-    box-shadow: #37462c 3px 3px 6px 0px;
+    box-shadow: #395144 3px 3px 6px 0px;
     transform: scale(1.05);
 }
 
 #side-bar{
-    box-shadow: #37462c 0px -10px 11px 2px inset;
+    box-shadow: #395144 0px -10px 11px 2px inset;
 }
-
-
 
 i{
     font-size: larger;
+    color: #AA8B56;
 }
 
 
-// ---------------------- animatione fotoProfilo
+// // animatione fotoProfilo
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -162,11 +166,6 @@ i{
   cursor: pointer;
   overflow: hidden;
   position: relative;
-}
-
-.profile-image {
-  width: 100%;
-  height: auto;
 }
 
 @keyframes fadeIn {
@@ -186,4 +185,9 @@ i{
   animation: rotate 1s linear;
 }
 
+// card styling
+
+.card{
+    background-color: #F0EBCE;
+}
 

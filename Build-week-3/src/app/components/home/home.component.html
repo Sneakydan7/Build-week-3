@@ -1,26 +1,21 @@
 <div class="container-fluid p-0 position-fixed top">
   <div class="row g-0 display-flex">
-    <div class="col-3 test text-center p-3 vh-100 custom-text-color">
-      <h1 class="">My Blog</h1>
-      <div
-        class="image-container"
-        [@rotateImage]="rotateState"
-        (@rotateImage.start)="onRotateStart($event)"
-        (click)="rotateImage()"
-      >
-        <img
-          class="object-fit-contain profile-image"
+    <div class="col-3 sidebar-color text-center p-3 vh-100 custom-text-color">
+      <h1 class="blog-title">My Blog</h1>
+      <div class="image-container">
+        <img class="object-fit-contain profile-image" alt="" />
+      </div>
+      <!-- [@rotateImage]="rotateState"
+          (@rotateImage.start)="onRotateStart($event)"
+          (click)="rotateImage()"
           [src]="
             showOtherImage
               ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmx4iDIRFHiqVlS_QFaQ2hHEgIc39uz0bFHOcNc_MZSw&s'
               : authSrv.utente.user.image
-          "
-          alt=""
-        />
-      </div>
+          " -->
 
       <div>
-        <p class="mt-3">
+        <p class="mt-3 custom-text-color fs-5">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic sunt
           corrupti quia fuga autem dolore, eius, aut placeat labore cum
           molestias, pariatur delectus dolorum! Ratione totam quibusdam
@@ -28,17 +23,17 @@
         </p>
       </div>
       <div class="button-container mt-5">
-        <button class="btn btn-light rounded-circle">
-          <i class="bi bi-twitter-x text-success"></i>
+        <button class="btn btn-warning rounded-circle">
+          <i class="bi bi-twitter-x"></i>
         </button>
-        <button class="btn btn-light rounded-circle">
-          <i class="bi bi-discord text-success"></i>
+        <button class="btn btn-warning rounded-circle">
+          <i class="bi bi-discord"></i>
         </button>
-        <button class="btn btn-light rounded-circle">
-          <i class="bi bi-github text-success"></i>
+        <button class="btn btn-warning rounded-circle">
+          <i class="bi bi-github"></i>
         </button>
-        <button class="btn btn-light rounded-circle">
-          <i class="bi bi-linkedin text-success"></i>
+        <button class="btn btn-warning rounded-circle">
+          <i class="bi bi-linkedin"></i>
         </button>
       </div>
       <div class="ref-list d-flex flex-column justify-content-center mt-5">
@@ -53,34 +48,35 @@
         <h1 class="fw-bold py-3">
           DevBlog - A Blog Template Made For Developers
         </h1>
-        <h5 class="text-body-tertiary mb-0">
+        <h5 class="mb-0 lh-1 pb-3">
           Welcome to my Blog. Subscribe and get my latest blog post in your
           inbox.
         </h5>
-     
       </div>
-    <div class="container overflow-y-auto vh-100 ">
-        <div class=" bg-dark row px-5">
+      <div class="overflow-y-auto vh-100">
+        <div class="bg-dark row px-5">
           <div class="col-12" *ngFor="let elem of posts">
             <div class="card mb-3 mt-5">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="..." class="img-fluid rounded-start" alt="...">
+                  <img src="" class="img-fluid rounded-start" alt="..." />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h5 class="card-title">{{elem.title}}</h5>
-                    <p class="card-text">{{elem.body}}</p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title fs-3 fw-bold">{{ elem.title }}</h5>
+                    <p class="card-text">{{ elem.body }}</p>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >Last updated 3 mins ago</small
+                      >
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-  
         </div>
-    </div>
+      </div>
     </div>
   </div>
 </div>
