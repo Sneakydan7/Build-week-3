@@ -3,8 +3,8 @@
 }
 
 .image-container{
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     border-radius: 50%;
     border: solid 5px  #395144;
     width: 250px;
@@ -103,13 +103,14 @@ i {
     top: 56px;
 }
 
+//references list styling
+
 .ref-list a{
     margin-inline: auto;
     width: 50%;
     text-align: center;
     font-size: larger;
     text-decoration: none;
-    color: #F4EEE0;
     font-weight: bold;
     margin-top: 1rem;
     cursor: pointer;
@@ -128,8 +129,6 @@ i {
     border-radius: 10px;
     background-color: #395144;
     color: #AA8B56;
-    margin-top: 1.5rem;
-    margin-inline: auto;
     padding-top: 5px; 
     padding-bottom: 5px;
     width: 40%;
@@ -143,13 +142,14 @@ i {
 }
 
 #side-bar{
-    box-shadow: #395144 0px -10px 11px 2px inset;
+    box-shadow: #26392f 0px 0px 11px 5px inset;;
 }
 
 i{
     font-size: larger;
     color: #AA8B56;
 }
+
 
 
 // // animatione fotoProfilo
