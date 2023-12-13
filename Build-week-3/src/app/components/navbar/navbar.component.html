@@ -2,7 +2,8 @@
   class="navbar nav-color navbar-expand-lg position-fixed w-100"
   data-bs-theme="dark"
 >
-  <div class="container">
+<a class="navbar-brand" href="#"><img src="../../../assets/Logo.png" alt="" style="width: 50px;" class="ms-3"></a>
+
     <div
       class="collapse navbar-collapse justify-content-between"
       id="navbarNav"
@@ -45,7 +46,7 @@
           >
         </li>
       </ul>
-      <div class="d-flex align-items-baseline">
+      <div class="d-flex align-items-baseline me-3">
         <h6 class="ma-auto d-inline me-3" *ngIf="user">
           Welcome back, {{ user.user.name }}!
         </h6>
@@ -59,5 +60,5 @@
         </button>
       </div>
     </div>
-  </div>
+  
 </nav>
