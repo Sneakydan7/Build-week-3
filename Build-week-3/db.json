@@ -44,6 +44,15 @@
       "biografia": "aaaaa",
       "image": null,
       "id": 6
+    },
+    {
+      "email": "luca@utzeri.it",
+      "password": "$2a$10$4e0qVIWypcSas.FgWCavfuagQ2F5Hn.VGLMuP0JHyRN4hCbfque/u",
+      "name": "Luca",
+      "lastName": "Utzeri",
+      "biografia": "pippo",
+      "image": null,
+      "id": 7
     }
   ],
   "posts": [
