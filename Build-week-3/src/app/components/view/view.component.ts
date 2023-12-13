@@ -19,10 +19,15 @@ post!: Posts
 postArr:Posts[]  = []
 id:number = 0 
 URL = environment.apiURL
+isEditing = this.postSrv.isEditing
+
+
 
 
 
   constructor(private route:ActivatedRoute , private postSrv: PostsService , private router:Router , private http: HttpClient) {
+
+    
    }
 
   ngOnInit(): void {
@@ -58,16 +63,7 @@ body.value = this.post.body
   }
 
 
-nextArticle():any{
-  for(let i = 0 ; i < this.postArr.length ; i++){
- let elemId = this.postArr[i].id
 
- return elemId
- 
-
-  }
-
-}
 
  modifyPost(form:NgForm){
   let title = document.getElementById('title') as HTMLInputElement
@@ -88,10 +84,9 @@ this.http.put<Posts>(`${this.URL}/posts/${this.postId}`, post ).subscribe( data 
   this.postId = data.id 
 })
 
-
 }
-
-
-
   
+
+
+
 }

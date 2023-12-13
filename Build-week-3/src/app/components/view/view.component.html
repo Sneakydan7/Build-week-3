@@ -1,10 +1,10 @@
-<div class="container  vh-100 d-none ">
+<div class="container  vh-100 " *ngIf="!isEditing">
     <h2>View Post</h2>
     <p>View sites</p>
     <hr>
     <div class="d-grid gap-2 d-flex justify-content-between row">
         <button type="button" class="btn btn-primary col">Precedente</button>
-        <button type="button" class="btn btn-primary col" (click)="nextArticle">Sucessivo</button>
+        <button type="button" class="btn btn-primary col" >Successivo</button>
     </div>
     <hr>
     <div class="row d-flex justify-content-between">
@@ -18,7 +18,7 @@
             <h4><b>Body :</b></h4>
             <p>{{post.body}}</p>
 
-            <a href="/src/app/components/edit">Edit</a>
+            <a >Edit</a>
             <hr>
         </div>
         <div class="col-3">
@@ -28,7 +28,7 @@
 </div>
 
 
-<div class="container">
+<div class="container" *ngIf="isEditing">
     <h2>Edit Post # {{postId}}</h2>
 <form  #form="ngForm"
 class="px-3 py-4 rounded-3 text-white"  (ngSubmit)="modifyPost(form)">
@@ -38,9 +38,9 @@ class="px-3 py-4 rounded-3 text-white"  (ngSubmit)="modifyPost(form)">
               type="title"
               id="title"
               name="title"
-       
+      
               class="form-control"
-            ngModel
+            [(ngModel)]="post.title"
             />
           </div>
         <div class="form-group">
@@ -51,7 +51,7 @@ class="px-3 py-4 rounded-3 text-white"  (ngSubmit)="modifyPost(form)">
               name="body"
              
               class="form-control"
-              ngModel
+             [(ngModel)]="post.body"
               style="height: 150px;"
             />
           </div>

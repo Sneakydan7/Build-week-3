@@ -38,6 +38,8 @@ export class HomeComponent implements OnInit {
   URL = environment.apiURL;
   userImg!: string | null;
 
+
+
   rotateState: string = 'initial';
   showOtherImage: boolean = false;
 
@@ -74,14 +76,15 @@ export class HomeComponent implements OnInit {
 
 
 
+isEditingChange(id:number){
+  this.postsSrv.isEditing = true
+  this.router.navigate(['/view' , id])
+}
 
+isEditingView(id:number){
+  this.postsSrv.isEditing = false
+  this.router.navigate(['/view' , id])
+}
 
- viewPosts(postId: number): void {
-    this.router.navigate(['/view', postId]);
-  }
-
- editPosts(postId: number): void {
-    this.router.navigate(['/edit', postId]);
-  }
 
 }

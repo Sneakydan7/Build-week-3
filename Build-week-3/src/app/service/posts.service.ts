@@ -9,6 +9,9 @@ import { Auth } from '../auth/auth';
 })
 export class PostsService {
   URL = environment.apiURL;
+  isEditing:boolean = false
+
+
 
   constructor(private http: HttpClient) {}
 
@@ -29,4 +32,13 @@ export class PostsService {
     }
     return 0;
   }
+
+
+
+isEditingChange(){
+  this.isEditing = !this.isEditing
+}
+
+
+
 }
