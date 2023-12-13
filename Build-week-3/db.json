@@ -35,6 +35,15 @@
       "biografia": "aaaa",
       "image": "https://img.freepik.com/premium-vector/businessman-avatar-character_24877-18287.jpg",
       "id": 5
+    },
+    {
+      "email": "dino@dino.it",
+      "password": "$2a$10$3Vtsr1GcXuDRyJl.MXniLOCOmsJIfmiJZywDhJSeyXWtu4kytwx6m",
+      "name": "dino",
+      "lastName": "dino",
+      "biografia": "aaaaa",
+      "image": null,
+      "id": 6
     }
   ],
   "posts": [
