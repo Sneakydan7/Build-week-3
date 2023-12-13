@@ -64,6 +64,7 @@
 
 
 .profile-image{
+    width: 200%;
     object-fit: contain;
 }
 
@@ -96,6 +97,7 @@ i {
 .top{
     top: 56px;
 }
+
 .ref-list a{
     margin-inline: auto;
     width: 50%;
@@ -138,3 +140,50 @@ i {
 #side-bar{
     box-shadow: #37462c 0px -10px 11px 2px inset;
 }
+
+
+
+i{
+    font-size: larger;
+}
+
+
+// ---------------------- animatione fotoProfilo
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.image-container {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-image {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s;
+}
+
+.rotate {
+  animation: rotate 1s linear;
+}
+
+
