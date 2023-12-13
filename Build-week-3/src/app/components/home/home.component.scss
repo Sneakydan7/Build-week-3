@@ -89,6 +89,7 @@
 button {
     background-color: #F0EBCE;
     border:solid 3px  #395144;
+    z-index: 1;
 }
 
 button > i{
@@ -114,6 +115,7 @@ i {
     font-weight: bold;
     margin-top: 1rem;
     cursor: pointer;
+    z-index: 1;
 }
 
 .ref-list a:first-of-type{
@@ -133,6 +135,7 @@ i {
     padding-bottom: 5px;
     width: 40%;
     transition: all 0.5;
+    z-index: 1;
 }
 
 .ref-list button:hover{
@@ -191,3 +194,14 @@ i{
     background-color: #F0EBCE;
 }
 
+//logo styling
+
+#logo{
+    float: left;
+    position: fixed;
+    opacity: 20%;
+    scale: 50%;
+    bottom: -9%;
+    left: -6%;
+    z-index: 0;
+}
