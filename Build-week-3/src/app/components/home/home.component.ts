@@ -83,11 +83,13 @@ export class HomeComponent implements OnInit {
     this.editingBiography = false;
   }
 
-  viewPosts(postId: number): void {
-    this.router.navigate(['/view', postId]);
+  isEditingChange(id: number) {
+    this.postsSrv.isEditing = true;
+    this.router.navigate(['/view', id]);
   }
 
-  editPosts(postId: number): void {
-    this.router.navigate(['/edit', postId]);
+  isEditingView(id: number) {
+    this.postsSrv.isEditing = false;
+    this.router.navigate(['/view', id]);
   }
 }
