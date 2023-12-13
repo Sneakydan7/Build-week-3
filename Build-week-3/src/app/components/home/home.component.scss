@@ -1,0 +1,56 @@
+.test{
+    background-color: #5F6F52;
+}
+
+.tets-text{
+    color: white;
+}
+
+.image-container{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 50%;
+    border: solid 5px #3c4436;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    object-fit: center;
+    margin-inline: auto;
+}
+
+.profile-image{
+    width: 200%;
+    object-fit: contain;
+}
+
+.custom-text-color{
+    color: white;
+}
+
+.main-bg{
+    background-color: beige;
+}
+
+.button-container{
+    margin-top: 2rem;
+    margin-inline: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+button {
+    border:solid 3px #3c4436;
+}
+
+i {
+    font-size: larger;
+}
+
+.top{
+    top: 56px;
+}

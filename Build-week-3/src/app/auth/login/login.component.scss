@@ -1,0 +1,37 @@
+:host {
+  height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://img.freepik.com/free-vector/flat-design-polygonal-background_23-2148904403.jpg?w=996&t=st=1702382857~exp=1702383457~hmac=53c6d1082cd72dd7ac8e2839338d30c7002db7873bd1df3de0a80c54a742a9cd);
+  background-size: cover;
+
+  background-position: center;
+}
+
+form {
+  width: 600px;
+  //   width: 250px;
+  background-color: #5f6f52be;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.48);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.48);
+  transition: all 0.5s;
+  backdrop-filter: blur(2px);
+}
+
+form:hover {
+  transform: scale(1.02);
+}
+
+button {
+  transition: all 0.4s;
+}
+button:hover {
+  -webkit-box-shadow: 0px 0px 29px 8px rgba(97, 97, 97, 0.76);
+  box-shadow: 0px 0px 29px 8px rgba(97, 97, 97, 0.76);
+}
+
+.foot-bar {
+  height: 62px;
+  width: 100%;
+}

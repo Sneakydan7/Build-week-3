@@ -1,1 +1,92 @@
-<p>register works!</p>
+<div class="row">
+  <div class="container">
+    <form
+     #form = "ngForm"
+      class="px-3 py-4 rounded-3 text-white"
+      (ngSubmit)="register(form)"
+    >
+      <div class="form-group mt-2">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          formControlName="name"
+          id="name"
+          class="form-control"
+          pattern="^[a-zA-Z]+$"
+       
+        
+        />
+
+        <label for="cognome">Cognome</label>
+        <input
+          type="text"
+          formControlName="lastName"
+          id="lastName"
+          class="form-control"
+          pattern="^[a-zA-Z]+$"
+          
+         
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          formControlName="email"
+          id="email"
+          class="form-control"
+          
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          id="password"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="biografia">Biografia</label>
+        <textarea
+          formControlName="biografia"
+          id="biografia"
+          class="form-control"
+          
+        ></textarea>
+      </div>
+      <!-- <div class="mt-4">
+        <label for="imageUrl">Image URL:</label>
+        <input
+          type="text"
+          id="imageUrl"
+          formControlName="image"
+          placeholder="Enter image URL"
+        />
+      </div> -->
+      <div class="form-group form-check mt-3">
+        <input
+          type="checkbox"
+          formControlName="privacyAccepted"
+          class="form-check-input"
+          id="privacyAccepted"
+        />
+        <label class="form-check-label" for="privacyAccepted">
+          Accetta informative sulla privacy
+        </label>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="form.invalid"
+        class="btn btn-primary mt-4 w-100"
+      >
+        Registrati
+      </button>
+    </form>
+  </div>
+</div>
