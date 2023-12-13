@@ -6,6 +6,7 @@ import { TokenInterceptor } from './auth/token.interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth/auth.guard';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -54,6 +55,7 @@ const routes: Route[] = [
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {
@@ -64,4 +66,4 @@ const routes: Route[] = [
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -30,6 +30,7 @@
               ? 'Il nome deve contenere almeno 2 caratteri'
               : ''
           }}"
+          onkeydown="return event.key < '0' || event.key > '9'"
         />
 
         <label for="cognome">Cognome</label>
@@ -55,6 +56,7 @@
               ? 'Il cognome deve contenere almeno 2 caratteri'
               : ''
           }}"
+          onkeydown="return event.key < '0' || event.key > '9'"
         />
       </div>
 
@@ -119,7 +121,19 @@
           id="imageUrl"
           formControlName="image"
           placeholder="Enter image URL"
+          class="form-control"
         />
+      </div>
+      <div class="form-group form-check mt-3">
+        <input
+          type="checkbox"
+          formControlName="privacyAccepted"
+          class="form-check-input"
+          id="privacyAccepted"
+        />
+        <label class="form-check-label" for="privacyAccepted">
+          Accetta informative sulla privacy
+        </label>
       </div>
 
       <button
