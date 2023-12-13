@@ -72,8 +72,13 @@
     color: #F0EBCE;
 }
 
+.main-bg h1{
+    z-index: 1;
+}
+
 .main-bg h5 {
     color: #AA8B56;
+    z-index: 1;
 }
 
 .button-container{
@@ -197,11 +202,10 @@ i{
 //logo styling
 
 #logo{
-    float: left;
-    position: fixed;
+    position: absolute;
     opacity: 20%;
-    scale: 50%;
-    bottom: -9%;
-    left: -6%;
-    z-index: 0;
+    scale: 20%;
+    top: -20%;
+    right: -12%;
+    z-index: 1;
 }
