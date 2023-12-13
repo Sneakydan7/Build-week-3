@@ -1,17 +1,21 @@
 <main>
-  <div class="container d-flex align-items-center justify-content-center">
+  <div
+    class="container d-flex align-items-center justify-content-center scale-in-ver-center"
+  >
     <form
       *ngIf="registerForm"
       [formGroup]="registerForm"
       class="px-3 py-4 rounded-3 text-white"
       (ngSubmit)="register()"
     >
-      <div class="form-group mt-2">
-        <label for="nome">Nome</label>
+      <div
+        class="form-group mt-2 d-flex align-items-center justify-content-evenly"
+      >
         <input
           type="text"
           formControlName="name"
           id="name"
+          placeholder="Name"
           class="form-control"
           pattern="^[a-zA-Z]+$"
           [ngClass]="{
@@ -33,11 +37,11 @@
           onkeydown="return event.key < '0' || event.key > '9'"
         />
 
-        <label for="cognome">Cognome</label>
         <input
           type="text"
           formControlName="lastName"
           id="lastName"
+          placeholder="Last name"
           class="form-control"
           pattern="^[a-zA-Z]+$"
           [ngClass]="{
@@ -60,34 +64,37 @@
         />
       </div>
 
-      <div>
-        <label for="gender" class="mt-2">Gender:</label>
-        <div class="mb-2">
-          <input
-            type="radio"
-            id="male"
-            name="gender"
-            value="uomo"
-            formControlName="gender"
-          />
-          <label for="male" class="me-4">Uomo</label>
-          <input
-            type="radio"
-            id="female"
-            name="gender"
-            value="donna"
-            formControlName="gender"
-          />
-          <label for="female">Donna</label>
+      <div class="mt-2">
+        <div class="mb-2 d-flex align-items-center justify-content-evenly">
+          <div>
+            <input
+              type="radio"
+              id="male"
+              name="gender"
+              value="uomo"
+              formControlName="gender"
+            />
+            <label for="male" class="me-4">Male</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              value="donna"
+              formControlName="gender"
+            />
+            <label for="female">Female</label>
+          </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="email">Email</label>
         <input
           type="email"
           formControlName="email"
           id="email"
+          placeholder="E-mail"
           class="form-control"
           title="
               {{
@@ -106,21 +113,21 @@
       </div>
 
       <div class="form-group">
-        <label for="password">Password</label>
         <input
           type="password"
           formControlName="password"
           id="password"
-          class="form-control"
+          placeholder="Password"
+          class="form-control mt-2"
         />
       </div>
 
       <div class="form-group">
-        <label for="biografia">Biografia</label>
         <textarea
           formControlName="biografia"
           id="biografia"
-          class="form-control"
+          placeholder="Enter a short description for your blog.."
+          class="form-control mt-2"
           title="
               {{
             registerForm.get('biografia')?.hasError('required') &&
@@ -136,13 +143,12 @@
           }}"
         ></textarea>
       </div>
-      <div class="mt-4">
-        <label for="imageUrl">Image URL:</label>
+      <div class="mt-3">
         <input
           type="text"
           id="imageUrl"
           formControlName="image"
-          placeholder="Enter image URL"
+          placeholder="Input an image to use as a profile picture.."
           class="form-control"
         />
       </div>
@@ -154,16 +160,17 @@
           id="privacyAccepted"
         />
         <label class="form-check-label" for="privacyAccepted">
-          Accetta informative sulla privacy
+          I have read and agreed with terms and conditions
         </label>
       </div>
 
       <button
         type="submit"
         [disabled]="registerForm.invalid"
-        class="btn btn-primary mt-4 w-100"
+        class="btn btn-dark mt-4 w-100"
+        id="register"
       >
-        Registrati
+        Sign up
       </button>
     </form>
   </div>
