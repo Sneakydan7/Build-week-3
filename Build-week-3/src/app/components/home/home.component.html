@@ -1,8 +1,118 @@
 <div class="container-fluid p-0 position-fixed top">
   <div class="row g-0 display-flex">
+    <button class="collapse-button d-flex d-lg-none gap-1 collapse">
+      <a
+        class="btn position-absolute rounded-circle"
+        data-bs-toggle="collapse"
+        href="#collapsedSidebar"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapsedSidebar"
+      >
+        <i class="bi bi-arrows-expand"></i>
+      </a>
+    </button>
+    <div class="collapse" id="collapsedSidebar">
+      <div
+        id="side-bar-collapsed"
+        class="col-12 d-lg-inline sidebar-color text-center p-3 custom-text-color position-relative"
+      >
+        <h1 class="custom-text-color">My Blog</h1>
+        <div
+          class="image-container"
+          [@rotateImage]="rotateState"
+          (@rotateImage.start)="onRotateStart($event)"
+          (click)="rotateImage()"
+        >
+          <img
+            class="object-fit-contain profile-image float-start"
+            *ngIf="!this.userImg"
+            [src]="
+              showOtherImage
+                ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmx4iDIRFHiqVlS_QFaQ2hHEgIc39uz0bFHOcNc_MZSw&s'
+                : 'https://www.ultima-affinity.com/on/demandware.static/-/Library-Sites-Ultima-it-IsolateLibrary/default/dw434d9e6c/petmoji-images/miniatures/dog/golden_sh_miniature.jpg'
+            "
+            alt=""
+          />
+
+          <img src="{{ this.userImg }}" alt="img" *ngIf="this.userImg" />
+        </div>
+
+        <div>
+          <p class="mt-1 mt-xl-3 custom-text-color fs-6">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic sunt
+            corrupti quia fuga autem dolore, eius, aut placeat labore cum
+            molestias, pariatur delectus dolorum! Ratione totam quibusdam
+            temporibus adipisci! Reprehenderit.
+          </p>
+        </div>
+        <div class="button-container mt-xl-5 mt-3 d-none d-lg-flex">
+          <button class="btn btn-warning rounded-circle">
+            <i class="bi bi-twitter-x"></i>
+          </button>
+          <button class="btn btn-warning rounded-circle">
+            <i class="bi bi-discord"></i>
+          </button>
+          <button class="btn btn-warning rounded-circle">
+            <i class="bi bi-github"></i>
+          </button>
+          <button class="btn btn-warning rounded-circle">
+            <i class="bi bi-linkedin"></i>
+          </button>
+        </div>
+        <p class="d-inline-flex gap-1">
+          <a
+            class="btn d-lg-none collapse-button"
+            data-bs-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            My Links
+          </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <a class="collapse-list">
+              <i class="bi bi-twitter-x"></i>
+              My X Profile</a
+            >
+            <a class="collapse-list">
+              <i class="bi bi-discord"></i>
+              My Discord Server</a
+            >
+            <a class="collapse-list">
+              <i class="bi bi-github"></i>
+              My GitHub</a
+            >
+            <a class="collapse-list">
+              <i class="bi bi-linkedin"></i>
+              My Linkedin</a
+            >
+          </div>
+        </div>
+        <div
+          class="ref-list d-flex flex-lg-column justify-content-center mt-xl-5 mt-2"
+        >
+          <a class="btn-warning"
+            ><i class="bi bi-houses-fill px-2"></i
+            ><span class="d-none d-lg-inline">Blog Home</span></a
+          >
+          <a class="btn-warning custom-text-color"
+            ><i class="bi bi-bookmark-fill px-2"></i
+            ><span class="d-none d-lg-inline">Blog Post</span></a
+          >
+          <a class="btn-warning custom-text-color"
+            ><i class="bi bi-people-fill px-2"></i
+            ><span class="d-none d-lg-inline">About Me</span></a
+          >
+        </div>
+      </div>
+    </div>
     <div
       id="side-bar"
-      class="col-3 sidebar-color text-center p-3 custom-text-color position-relative"
+      class="col-3 d-none d-lg-inline sidebar-color text-center p-3 custom-text-color position-relative"
     >
       <h1 class="custom-text-color">My Blog</h1>
       <div
@@ -33,7 +143,7 @@
           temporibus adipisci! Reprehenderit.
         </p>
       </div>
-      <div class="button-container mt-xl-5 mt-3">
+      <div class="button-container mt-xl-5 mt-3 d-none d-lg-flex">
         <button class="btn btn-warning rounded-circle">
           <i class="bi bi-twitter-x"></i>
         </button>
@@ -46,6 +156,38 @@
         <button class="btn btn-warning rounded-circle">
           <i class="bi bi-linkedin"></i>
         </button>
+      </div>
+      <p class="d-inline-flex gap-1">
+        <a
+          class="btn d-lg-none collapse-button"
+          data-bs-toggle="collapse"
+          href="#collapseExample"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          My Links
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          <a class="collapse-list">
+            <i class="bi bi-twitter-x"></i>
+            My X Profile</a
+          >
+          <a class="collapse-list">
+            <i class="bi bi-discord"></i>
+            My Discord Server</a
+          >
+          <a class="collapse-list">
+            <i class="bi bi-github"></i>
+            My GitHub</a
+          >
+          <a class="collapse-list">
+            <i class="bi bi-linkedin"></i>
+            My Linkedin</a
+          >
+        </div>
       </div>
       <div
         class="ref-list d-flex flex-lg-column justify-content-center mt-xl-5 mt-2"
@@ -64,13 +206,14 @@
         >
       </div>
     </div>
-    <div class="col-9 text-center">
+    <div class="col-12 col-lg-9 text-center">
       <div class="main-bg p-3 position-relative">
-        <img id="logo" src="../../../assets/Logo.png" />
-        <h1 class="fw-bold py-3">
-          PortFolio - A Blog by Developers, for Developers
+        <img id="logo" src="../../../assets/Logo.png" class="d-lg-inline" />
+        <h1 class="fw-bold"><span class="title-P">P</span>ortFolio</h1>
+        <h1 class="fw-bold py-3 d-none d-md-inline">
+          The Blog by Developers, for Developers
         </h1>
-        <h5 class="mb-0 lh-1 pb-3">
+        <h5 class="mb-0 lh-1 pt-2 pb-3 fs-6">
           Welcome to PortFolio. Subscribe and Follow to receive all the news of
           your favorite developers in your inbox.
         </h5>
