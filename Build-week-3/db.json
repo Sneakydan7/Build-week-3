@@ -17,6 +17,24 @@
       "biografia": "Full-stack dev in training!",
       "image": null,
       "id": 3
+    },
+    {
+      "email": "marco@m.it",
+      "password": "$2a$10$HZtghu2pdFMnpjPFyobfCOZcf6WGq263ePYOlEh8vrgcpmJBkoUC.",
+      "name": "marco",
+      "lastName": "marcolino",
+      "biografia": "aaaa",
+      "image": null,
+      "id": 4
+    },
+    {
+      "email": "paolo@paoli.com",
+      "password": "$2a$10$gc6RstIWrFI6C9RCF/i1Fesw9aIMgVzgMdNyEl3VfKKVvQSzLam4m",
+      "name": "paolo",
+      "lastName": "paoli",
+      "biografia": "aaaa",
+      "image": "https://img.freepik.com/premium-vector/businessman-avatar-character_24877-18287.jpg",
+      "id": 5
     }
   ],
   "posts": [

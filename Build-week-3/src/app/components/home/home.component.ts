@@ -10,6 +10,7 @@ import {
   transition,
   animate,
 } from '@angular/animations';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -31,17 +32,26 @@ import {
 })
 export class HomeComponent implements OnInit {
   posts: Posts[] | undefined;
-  userId: number = 0;
+  id: number = 0;
+  URL = environment.apiURL;
 
   rotateState: string = 'initial';
   showOtherImage: boolean = false;
 
-  constructor(private postsSrv: PostsService, public authSrv: AuthService) {}
+  constructor(
+    private postsSrv: PostsService,
+    private authSrv: AuthService,
+    private http: HttpClient
+  ) {}
 
   ngOnInit(): void {
-    this.userId = this.postsSrv.getUserId();
-    this.postsSrv.getPosts().subscribe((posts: Posts[]) => {
-      this.posts = posts;
+    this.id = this.postsSrv.getUserId();
+    console.log(this.id);
+    this.http.get<Posts[]>(`${this.URL}/posts`).subscribe((res) => {
+      let update: Posts[] = res.filter((user) => user.userId === this.id);
+      this.posts = update;
+      console.log(this.posts);
+      return this.posts;
     });
   }
 
