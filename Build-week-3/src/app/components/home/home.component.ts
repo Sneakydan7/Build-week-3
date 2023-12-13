@@ -4,6 +4,7 @@ import { Posts } from 'src/app/models/posts';
 import { PostsService } from 'src/app/service/posts.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 import {
   trigger,
   state,
@@ -45,7 +46,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private postsSrv: PostsService,
     private authSrv: AuthService,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -79,5 +81,13 @@ export class HomeComponent implements OnInit {
   saveBiography() {
     this.authSrv.getBiografia();
     this.editingBiography = false;
+  }
+
+  viewPosts(postId: number): void {
+    this.router.navigate(['/view', postId]);
+  }
+
+  editPosts(postId: number): void {
+    this.router.navigate(['/edit', postId]);
   }
 }

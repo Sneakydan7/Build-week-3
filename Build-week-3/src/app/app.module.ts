@@ -22,11 +22,11 @@ const routes: Route[] = [
     component: HomeComponent,
   },
   {
-    path: 'view',
+    path: 'view/:postId',
     component: ViewComponent,
   },
   {
-    path: 'edit',
+    path: 'edit/:postId',
     component: EditComponent,
   },
   {

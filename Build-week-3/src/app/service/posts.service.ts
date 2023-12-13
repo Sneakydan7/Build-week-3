@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Posts } from '../models/posts';
 import { Auth } from '../auth/auth';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -13,6 +14,11 @@ export class PostsService {
 
   getPosts() {
     return this.http.get<Posts[]>(`${this.URL}/posts`);
+  }
+
+
+  getPostsById(id:number){
+    return this.http.get<Posts>(`${this.URL}/posts/${id}`)
   }
 
   getUserId(): number {
