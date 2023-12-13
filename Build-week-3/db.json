@@ -26,6 +26,15 @@
       "biografia": "lorem ipsum falso ",
       "image": null,
       "id": 4
+    },
+    {
+      "email": "cosmin@gmail.com",
+      "password": "$2a$10$OlHXZxhvJ8o0rYIhABWCZOWUBQ5D5dXZjEykqxbiHsua.QjkcCHXG",
+      "name": "Cosmin",
+      "lastName": "Petrea",
+      "biografia": "biografia",
+      "image": "https://img.freepik.com/free-vector/reindeer-head-silhouette_23-2147500891.jpg?w=740&t=st=1702457775~exp=1702458375~hmac=39d1af22280e2b35f444139ed42efdaf8c944ef0d0544ec7608a32e04c8900d6",
+      "id": 5
     }
   ],
   "posts": [
