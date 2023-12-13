@@ -1,10 +1,9 @@
 <div class="row">
   <div class="container">
     <form
-      *ngIf="registerForm"
-      [formGroup]="registerForm"
+     #form = "ngForm"
       class="px-3 py-4 rounded-3 text-white"
-      (ngSubmit)="register()"
+      (ngSubmit)="register(form)"
     >
       <div class="form-group mt-2">
         <label for="nome">Nome</label>
@@ -14,22 +13,8 @@
           id="name"
           class="form-control"
           pattern="^[a-zA-Z]+$"
-          [ngClass]="{
-            'text-danger': registerForm.get('name')?.value?.length < 3
-          }"
-          title="
-            {{
-            registerForm.get('name')?.hasError('required') &&
-            registerForm.get('name')?.touched
-              ? 'Nome è obbligatorio'
-              : ''
-          }}
-            {{
-            registerForm.get('name')?.hasError('minlength') &&
-            registerForm.get('name')?.touched
-              ? 'Il nome deve contenere almeno 2 caratteri'
-              : ''
-          }}"
+       
+        
         />
 
         <label for="cognome">Cognome</label>
@@ -39,22 +24,8 @@
           id="lastName"
           class="form-control"
           pattern="^[a-zA-Z]+$"
-          [ngClass]="{
-            'text-error': registerForm.get('lastName')?.value?.length < 3
-          }"
-          title="
-            {{
-            registerForm.get('lastName')?.hasError('required') &&
-            registerForm.get('lastName')?.touched
-              ? 'Cognome è obbligatorio'
-              : ''
-          }}
-            {{
-            registerForm.get('lastName')?.hasError('minlength') &&
-            registerForm.get('lastName')?.touched
-              ? 'Il cognome deve contenere almeno 2 caratteri'
-              : ''
-          }}"
+          
+         
         />
       </div>
 
@@ -65,19 +36,7 @@
           formControlName="email"
           id="email"
           class="form-control"
-          title="
-            {{
-            registerForm.get('email')?.hasError('required') &&
-            registerForm.get('email')?.touched
-              ? 'Email è obbligatoria'
-              : ''
-          }}
-            {{
-            registerForm.get('email')?.hasError('email') &&
-            registerForm.get('email')?.touched
-              ? 'Inserisci un indirizzo email valido'
-              : ''
-          }}"
+          
         />
       </div>
 
@@ -97,22 +56,10 @@
           formControlName="biografia"
           id="biografia"
           class="form-control"
-          title="
-            {{
-            registerForm.get('biografia')?.hasError('required') &&
-            registerForm.get('biografia')?.touched
-              ? 'La biografia è obbligatoria'
-              : ''
-          }}
-            {{
-            registerForm.get('biografia')?.hasError('maxlength') &&
-            registerForm.get('biografia')?.touched
-              ? 'La biografia non può superare i 100 caratteri'
-              : ''
-          }}"
+          
         ></textarea>
       </div>
-      <div>
+      <!-- <div class="mt-4">
         <label for="imageUrl">Image URL:</label>
         <input
           type="text"
@@ -120,11 +67,22 @@
           formControlName="image"
           placeholder="Enter image URL"
         />
+      </div> -->
+      <div class="form-group form-check mt-3">
+        <input
+          type="checkbox"
+          formControlName="privacyAccepted"
+          class="form-check-input"
+          id="privacyAccepted"
+        />
+        <label class="form-check-label" for="privacyAccepted">
+          Accetta informative sulla privacy
+        </label>
       </div>
 
       <button
         type="submit"
-        [disabled]="registerForm.invalid"
+        [disabled]="form.invalid"
         class="btn btn-primary mt-4 w-100"
       >
         Registrati

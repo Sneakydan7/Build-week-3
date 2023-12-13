@@ -7,6 +7,8 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-register',
@@ -51,28 +53,25 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  insertImage() {
-    const imageControl = this.registerForm?.get('image');
-    if (imageControl) {
-      const imageUrl = this.registerForm?.value.image;
-      if (imageControl.valid) {
-        imageControl.setValue(imageUrl);
-      } else {
-        alert('Invalid image URL');
-      }
+  // insertImage() {
+  //   const imageControl = this.registerForm?.get('image');
+  //   if (imageControl) {
+  //     const imageUrl = this.registerForm?.value.image;
+  //     if (imageControl.valid) {
+  //       imageControl.setValue(imageUrl);
+  //     } else {
+  //       alert('Invalid image URL');
+  //     }
+  //   }
+  // }
+  
+  register(form:NgForm){
+    try{
+      this.authSrv.register(form.value).subscribe()
+      console.log(form.value)
+    } catch(error:any){
+      alert(error)
+      this.router.navigate(['/register'])
     }
-  }
-
-  register() {
-    try {
-      if (this.registerForm) {
-        this.insertImage();
-        this.authSrv.register(this.registerForm.value).subscribe();
-        console.log(this.registerForm.value);
-      }
-    } catch (error: any) {
-      alert(error);
-      this.router.navigate(['/register']);
-    }
-  }
+}
 }

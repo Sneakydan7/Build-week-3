@@ -18,6 +18,8 @@ userId: number = 0
 id:number = 0
 URL = environment.apiURL
 
+// rotateState: string = 'initial';
+// showOtherImage: boolean = false;
 
   constructor(private postsSrv: PostsService , private authSrv: AuthService , private http:HttpClient) { }
 
@@ -35,10 +37,14 @@ return this.posts
 }
 
 
-  
+//   rotateImage() {
+//     this.showOtherImage = !this.showOtherImage;
+//     this.rotateState = this.rotateState === 'initial' ? 'rotated' : 'initial';
+//   }
 
-
-
-
-
+//   onRotateStart(event: any) {
+//     if (event.toState === 'rotated') {
+//       this.showOtherImage = true;
+//     }
+//   }
 }
