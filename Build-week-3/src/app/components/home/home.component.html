@@ -4,7 +4,7 @@
       id="side-bar"
       class="col-3 sidebar-color text-center p-3 custom-text-color"
     >
-      <h1 class="custom-text-color">My Blog</h1>
+      <h1 class="custom-text-color">My blog {{ this.name }}</h1>
       <div
         class="image-container"
         [@rotateImage]="rotateState"
@@ -24,15 +24,27 @@
 
         <img src="{{ this.userImg }}" alt="img" *ngIf="this.userImg" />
       </div>
-
-      <div>
-        <p class="mt-1 mt-xl-3 custom-text-color fs-6">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic sunt
-          corrupti quia fuga autem dolore, eius, aut placeat labore cum
-          molestias, pariatur delectus dolorum! Ratione totam quibusdam
-          temporibus adipisci! Reprehenderit.
+      <!-- lavori in corso -->
+      <div class="descrizione">
+        <p>Biografia</p>
+        <p
+          *ngIf="!editingBiography"
+          class="mt-1 mt-xl-3 custom-text-color fs-6"
+        >
+          {{ this.biografia }}
         </p>
+        <button class="bottone" (click)="editBiography()">Modifica</button>
+
+        <textarea
+          *ngIf="editingBiography"
+          [(ngModel)]="biografia"
+          class="form-control"
+        ></textarea>
+        <div *ngIf="editingBiography" class="mt-2">
+          <button class="bottone" (click)="saveBiography()">Save</button>
+        </div>
       </div>
+      <!-- fine lavori in corso -->
       <div class="button-container mt-xl-5 mt-3">
         <button class="btn btn-warning rounded-circle">
           <i class="bi bi-twitter-x"></i>

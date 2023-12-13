@@ -12,7 +12,6 @@ import {
   animate,
 } from '@angular/animations';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -36,9 +35,12 @@ export class HomeComponent implements OnInit {
   id: number = 0;
   URL = environment.apiURL;
   userImg!: string | null;
+  biografia!: string | null;
+  name!: string | null;
 
   rotateState: string = 'initial';
   showOtherImage: boolean = false;
+  editingBiography: boolean = false;
 
   constructor(
     private postsSrv: PostsService,
@@ -49,6 +51,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.postsSrv.getUserId();
     this.userImg = this.authSrv.getUserImage();
+    this.biografia = this.authSrv.getBiografia();
+    this.name = this.authSrv.getName();
     console.log(this.id);
     this.http.get<Posts[]>(`${this.URL}/posts`).subscribe((res) => {
       let update: Posts[] = res.filter((user) => user.userId === this.id);
@@ -57,7 +61,6 @@ export class HomeComponent implements OnInit {
       return this.posts;
     });
   }
-
 
   rotateImage() {
     this.showOtherImage = !this.showOtherImage;
@@ -70,4 +73,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  editBiography() {
+    this.editingBiography = !this.editingBiography;
+  }
+  saveBiography() {
+    this.authSrv.getBiografia();
+    this.editingBiography = false;
+  }
 }
