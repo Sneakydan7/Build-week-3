@@ -17,6 +17,15 @@
       "biografia": "Full-stack dev in training!",
       "image": null,
       "id": 3
+    },
+    {
+      "email": "c@p.com",
+      "password": "$2a$10$G1.UPawfXxmgipGDnzpzBuuAGmHKo/fkQitAP9Lc9W766znZzW0fi",
+      "name": "Cosmin",
+      "lastName": "Petrea",
+      "biografia": "lorem ipsum falso ",
+      "image": null,
+      "id": 4
     }
   ],
   "posts": [
