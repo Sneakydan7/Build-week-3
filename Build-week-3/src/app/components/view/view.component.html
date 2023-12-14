@@ -1,14 +1,14 @@
 <div class="container">
     <h2>View Post</h2>
     <p>View sites</p>
-    <hr>
-    <div class="d-grid gap-2 d-flex justify-content-between row">
+
+    <div class="bottoni d-grid gap-2 d-flex justify-content-between row border-button">
         <button type="button" class="btn btn-primary col">Precedente</button>
         <button type="button" class="btn btn-primary col">Sucessivo</button>
     </div>
-    <hr>
+
     <div class="row d-flex justify-content-between">
-        <div class="col-6" *ngIf="post">
+        <div class="col-6 border" *ngIf="post">
 
             <div class="d-flex gap-4" >
                 <h5><b>{{postId}}</b></h5>
@@ -19,7 +19,7 @@
             <p>{{post.body}}</p>
 
             <a href="/src/app/components/edit">Edit</a>
-            <hr>
+            
         </div>
         <div class="col-3">
             <img src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/14/yvA5SpUH-IMG-Worlds-1200x800.jpg" alt="">
