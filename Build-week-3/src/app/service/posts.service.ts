@@ -11,6 +11,7 @@ export class PostsService {
   URL = environment.apiURL;
   isEditing: boolean = false;
   isCreating: boolean = false;
+
   constructor(private http: HttpClient) {}
 
   getPosts() {

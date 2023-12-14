@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { BehaviorSubject, throwError, tap, catchError } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
-
+import { UserProfile } from '../models/user-profile';
 @Injectable({
   providedIn: 'root',
 })
@@ -15,7 +15,6 @@ export class AuthService {
   private authSbj = new BehaviorSubject<null | Auth>(null);
   user$ = this.authSbj.asObservable();
   utente!: Auth;
-
   constructor(private http: HttpClient, private router: Router) {
     this.restore();
   }
@@ -80,31 +79,13 @@ export class AuthService {
     return null;
   }
 
-  getUserImage(): string | null {
-    const image = localStorage.getItem('user');
-    if (image) {
-      const userData: Auth = JSON.parse(image);
-      return userData.user.image;
-    }
-    return null;
-  }
-
-  getBiografia(): string | null {
-    const bio = localStorage.getItem('user');
-    if (bio) {
-      const userData: Auth = JSON.parse(bio);
-      return userData.user.biografia;
-    }
-    return null;
-  }
-
-  getName(): string | null {
-    const name = localStorage.getItem('user');
-    if (name) {
-      const userData: Auth = JSON.parse(name);
-      return userData.user.name;
-    }
-    return null;
+  updateUserInfo(updatedInfo: any, id: number) {
+    return this.http.put(`${this.URL}/users/${id}`, updatedInfo).pipe(
+      tap(() => {
+        this.utente = { ...this.utente, ...updatedInfo };
+      }),
+      catchError(this.errors)
+    );
   }
 
   private errors(err: any) {
@@ -126,5 +107,9 @@ export class AuthService {
         return throwError('Errore');
         break;
     }
+  }
+
+  getUserByIdJSON(id: number) {
+    return this.http.get<UserProfile>(`${this.URL}/users/${id}`);
   }
 }

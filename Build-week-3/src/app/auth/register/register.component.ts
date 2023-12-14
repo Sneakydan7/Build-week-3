@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
         Validators.minLength(0),
       ]),
       image: new FormControl(null, [Validators.pattern(/^https?:\/\//i)]),
-      privacyAccepted: new FormControl(false, [Validators.requiredTrue]),
+      // privacyAccepted: new FormControl(false, [Validators.requiredTrue]),
     });
   }
 
