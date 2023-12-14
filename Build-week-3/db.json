@@ -53,6 +53,17 @@
       "biografia": "pippo",
       "image": null,
       "id": 7
+    },
+    {
+      "email": "123@123.com",
+      "password": "$2a$10$bTeIJlOlpM0Zr4lw4rMOn.E9TR4RuznZe/B9VTQbn1FuwlKwAOXtS",
+      "name": "kavidu",
+      "lastName": "francesco",
+      "gender": "uomo",
+      "biografia": "a",
+      "image": null,
+      "privacyAccepted": true,
+      "id": 8
     }
   ],
   "posts": [
