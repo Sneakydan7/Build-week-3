@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.authSrv.restore();
     this.id = this.postsSrv.getUserId();
     this.userImg = this.authSrv.getUserImage();
 

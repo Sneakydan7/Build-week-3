@@ -16,9 +16,7 @@ export class AuthService {
   user$ = this.authSbj.asObservable();
   utente!: Auth;
 
-  constructor(private http: HttpClient, private router: Router) {
-    this.restore();
-  }
+  constructor(private http: HttpClient, private router: Router) {}
 
   login(data: { email: string; password: string }) {
     return this.http.post<Auth>(`${this.URL}/login`, data).pipe(
@@ -38,6 +36,8 @@ export class AuthService {
     if (!user) {
       this.router.navigate(['/login']);
       return;
+    } else {
+      this.router.navigate([`${this.router.url}`]);
     }
 
     const UserData: Auth = JSON.parse(user);
