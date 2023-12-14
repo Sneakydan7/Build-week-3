@@ -1,15 +1,15 @@
 <main>
-  
-    <div
-      id="backG"
-      class="container d-flex align-items-center justify-content-center "
-    >
+  <div
+    id="backG"
+    class="container d-flex align-items-center justify-content-center"
+  >
+    <div class="scale-in-ver-center">
       <form
         #form="ngForm"
         class="px-3 py-4 rounded-3 text-white"
         (ngSubmit)="accedi(form)"
       >
-        <h1 class="text-center">Log-in</h1>
+        <h1 class="text-center heartbeat mt-2">Log-in</h1>
         <div class="form-group">
           <label for="email">Email</label>
           <input
@@ -34,15 +34,21 @@
         </div>
         <button
           type="submit"
-          class="btn btn-dark mt-4 w-100"
+          class="btn btn-dark mt-4 w-100 shadow-pop-br"
           [disabled]="form.invalid"
+          id="signin"
         >
           Accedi
         </button>
         <div class="mt-2">
-          Join us <a class="pe-3" routerLink="/register">SignUp</a>
+          <a
+            class="pe-3 nav-link text-decoration-underline fs-7"
+            [routerLink]="['/register']"
+            routerLinkActive="active"
+            >SignUp</a
+          >
         </div>
       </form>
     </div>
-
+  </div>
 </main>
