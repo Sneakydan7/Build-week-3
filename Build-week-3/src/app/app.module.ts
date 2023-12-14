@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ViewComponent } from './components/view/view.component';
-import { EditComponent } from './components/edit/edit.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 
@@ -26,9 +25,10 @@ const routes: Route[] = [
     component: ViewComponent,
   },
   {
-    path: 'edit/:postId',
-    component: EditComponent,
+    path: 'view',
+    component: ViewComponent,
   },
+
   {
     path: 'login',
     component: LoginComponent,
@@ -45,7 +45,6 @@ const routes: Route[] = [
     NavbarComponent,
     HomeComponent,
     ViewComponent,
-    EditComponent,
     LoginComponent,
     RegisterComponent,
   ],

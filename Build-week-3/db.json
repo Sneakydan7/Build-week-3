@@ -5,7 +5,7 @@
       "password": "$2a$10$scBV9e4yWY3tyH46xdENYusOlxKXRPfkRDuM6jR1u5QO7QLhHPO/a",
       "name": "gianni",
       "lastName": "cabiddu",
-      "biografia": "aaa",
+      "biografia": "la mia biografia",
       "image": "https://previews.123rf.com/images/jemastock/jemastock1612/jemastock161200588/66481494-testa-uomo-sorriso-avatar-realt%C3%A0-virtuale-icona-illustrazione-vettoriale-eps-10.jpg",
       "id": 2
     },
@@ -53,6 +53,17 @@
       "biografia": "pippo",
       "image": null,
       "id": 7
+    },
+    {
+      "email": "123@123.com",
+      "password": "$2a$10$bTeIJlOlpM0Zr4lw4rMOn.E9TR4RuznZe/B9VTQbn1FuwlKwAOXtS",
+      "name": "kavidu",
+      "lastName": "francesco",
+      "gender": "uomo",
+      "biografia": "a",
+      "image": null,
+      "privacyAccepted": true,
+      "id": 8
     }
   ],
   "posts": [
@@ -70,7 +81,7 @@
     },
     {
       "title": "GOGGO",
-      "body": "LESGO",
+      "body": "LESGOSSSSS",
       "id": 3,
       "userId": 3
     },
@@ -189,10 +200,10 @@
       "userId": 3
     },
     {
-      "userId": 3,
+      "title": "A SQUIRTOLS",
+      "body": "CHEDDICI",
       "id": 23,
-      "title": "maxime id vitae nihil numquam",
-      "body": "veritatis unde neque eligendi\nquae quod architecto quo neque vitae\nest illo sit tempora doloremque fugit quod\net et vel beatae sequi ullam sed tenetur perspiciatis"
+      "userId": 3
     },
     {
       "userId": 3,
@@ -655,6 +666,39 @@
       "id": 100,
       "title": "at nam consequatur ea labore ea harum",
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
+    },
+    {
+      "userId": 0,
+      "id": 101,
+      "title": "",
+      "body": ""
+    },
+    {
+      "userId": 0,
+      "id": 102,
+      "title": "",
+      "body": ""
+    },
+    {
+      "id": 103
+    },
+    {
+      "userId": 0,
+      "id": 104,
+      "title": "",
+      "body": ""
+    },
+    {
+      "userId": 0,
+      "id": 105,
+      "title": "",
+      "body": ""
+    },
+    {
+      "userId": 0,
+      "id": 106,
+      "title": "",
+      "body": ""
     }
   ]
 }

@@ -13,7 +13,6 @@ import {
   animate,
 } from '@angular/animations';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -25,11 +24,6 @@ import {
       transition('initial => rotated', animate('1s linear')),
       transition('rotated => initial', animate('1s linear')),
     ]),
-    trigger('fadeOutIn', [
-      state('void', style({ opacity: 0 })),
-      state('*', style({ opacity: 1 })),
-      transition('void <=> *', animate('1s')),
-    ]),
   ],
 })
 export class HomeComponent implements OnInit {
@@ -38,21 +32,21 @@ export class HomeComponent implements OnInit {
   URL = environment.apiURL;
   userImg!: string | null;
 
-
-
   rotateState: string = 'initial';
   showOtherImage: boolean = false;
+  editingBiography: boolean = false;
 
   constructor(
     private postsSrv: PostsService,
     private authSrv: AuthService,
     private http: HttpClient,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.id = this.postsSrv.getUserId();
     this.userImg = this.authSrv.getUserImage();
+
     console.log(this.id);
     this.http.get<Posts[]>(`${this.URL}/posts`).subscribe((res) => {
       let update: Posts[] = res.filter((user) => user.userId === this.id);
@@ -61,7 +55,6 @@ export class HomeComponent implements OnInit {
       return this.posts;
     });
   }
-
 
   rotateImage() {
     this.showOtherImage = !this.showOtherImage;
@@ -74,17 +67,15 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  isEditingChange(id: number) {
+    this.postsSrv.isEditing = true;
+    this.router.navigate(['/view', id]);
+    this.postsSrv.isCreating = false;
+  }
 
-
-isEditingChange(id:number){
-  this.postsSrv.isEditing = true
-  this.router.navigate(['/view' , id])
-}
-
-isEditingView(id:number){
-  this.postsSrv.isEditing = false
-  this.router.navigate(['/view' , id])
-}
-
-
+  isEditingView(id: number) {
+    this.postsSrv.isEditing = false;
+    this.router.navigate(['/view', id]);
+    this.postsSrv.isCreating = false;
+  }
 }
