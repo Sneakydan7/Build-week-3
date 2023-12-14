@@ -25,8 +25,8 @@ import { NgForm } from '@angular/forms';
     trigger('flipImage', [
       state('initial', style({ transform: 'scaleX(1)' })),
       state('flipped', style({ transform: 'scaleX(-1)' })),
-      transition('initial => flipped', animate('1s linear')),
-      transition('flipped => initial', animate('1s linear')),
+      transition('initial => flipped', animate('0.2s linear')),
+      transition('flipped => initial', animate('0.2s linear')),
     ]),
   ],
 })
