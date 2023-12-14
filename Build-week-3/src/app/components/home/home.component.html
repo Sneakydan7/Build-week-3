@@ -117,7 +117,7 @@
       <<<<<<< HEAD
       <h1 class="custom-text-color">Welcome to My Blog</h1>
       =======
-      <h1 class="custom-text-color">My blog {{ this.name }}</h1>
+      <h1 class="custom-text-color">My blog</h1>
       >>>>>>> gianni2
       <div
         class="image-container"
@@ -141,21 +141,12 @@
 
       <div class="descrizione">
         <p>Biografia</p>
-        <p
-          *ngIf="!editingBiography"
-          class="mt-1 mt-xl-3 custom-text-color fs-6"
-        >
-          {{ this.biografia }}
-        </p>
-        <button class="bottone" (click)="editBiography()">Modifica</button>
+        <p class="mt-1 mt-xl-3 custom-text-color fs-6"></p>
+        <button class="bottone">Modifica</button>
 
-        <textarea
-          *ngIf="editingBiography"
-          [(ngModel)]="biografia"
-          class="form-control"
-        ></textarea>
+        <textarea *ngIf="editingBiography" class="form-control"></textarea>
         <div *ngIf="editingBiography" class="mt-2">
-          <button class="bottone" (click)="saveBiography()">Save</button>
+          <button class="bottone">Save</button>
         </div>
       </div>
       <div
