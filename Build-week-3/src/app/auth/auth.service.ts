@@ -89,6 +89,24 @@ export class AuthService {
     return null;
   }
 
+  getBiografia(): string | null {
+    const bio = localStorage.getItem('user');
+    if (bio) {
+      const userData: Auth = JSON.parse(bio);
+      return userData.user.biografia;
+    }
+    return null;
+  }
+
+  getName(): string | null {
+    const name = localStorage.getItem('user');
+    if (name) {
+      const userData: Auth = JSON.parse(name);
+      return userData.user.name;
+    }
+    return null;
+  }
+
   private errors(err: any) {
     console.log(err);
     switch (err.error) {

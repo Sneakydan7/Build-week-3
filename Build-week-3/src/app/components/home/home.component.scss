@@ -2,6 +2,9 @@
     background-color: #4E6C50;
 }
 
+.shadow-box{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
 .image-container{
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -50,12 +53,12 @@
     }
 
 }
-@media only screen and (min-width: 2400px){
-    .image-container{
-        width: 200px;
-        height: 200px;
-    }
-}
+// @media only screen and (min-width: 2400px){
+//     .image-container{
+//         width: 200px;
+//         height: 200px;
+//     }
+// }
 
 .profile-image{
     width: 100%;
@@ -72,8 +75,13 @@
     color: #F0EBCE;
 }
 
+.main-bg h1{
+    z-index: 1;
+}
+
 .main-bg h5 {
     color: #AA8B56;
+    z-index: 1;
 }
 
 .button-container{
@@ -89,6 +97,7 @@
 button {
     background-color: #F0EBCE;
     border:solid 3px  #395144;
+    z-index: 1;
 }
 
 button > i{
@@ -114,6 +123,7 @@ i {
     font-weight: bold;
     margin-top: 1rem;
     cursor: pointer;
+    z-index: 1;
 }
 
 .ref-list a:first-of-type{
@@ -133,6 +143,7 @@ i {
     padding-bottom: 5px;
     width: 40%;
     transition: all 0.5;
+    z-index: 1;
 }
 
 .ref-list button:hover{
@@ -142,7 +153,8 @@ i {
 }
 
 #side-bar{
-    box-shadow: #26392f 0px 0px 11px 5px inset;;
+    box-shadow: #26392f 0px 0px 11px 5px inset;
+    max-height: max-content;
 }
 
 i{
@@ -150,6 +162,22 @@ i{
     color: #AA8B56;
 }
 
+.collapse-button{
+    background-color: #26392f;
+    color: #F0EBCE;
+    font-weight: bold;
+    border: solid #F0EBCE 2px ;
+}
+
+.collapse-list{
+    text-decoration: none;
+    color: #AA8B56;
+}
+
+.title-P{
+    color: #1ad126;
+    text-shadow: #1d221f -3px 3px 5px;;
+}
 
 
 // // animatione fotoProfilo
@@ -191,3 +219,44 @@ i{
     background-color: #F0EBCE;
 }
 
+//logo styling
+
+#logo{
+    position: absolute;
+    opacity: 20%;
+    scale: 50%;
+    top: -10%;
+    right: -8%;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 770px) {
+    #logo{
+        position: absolute;
+        opacity: 20%;
+        scale: 40%;
+        top: -75%;
+        right: 20%;
+        z-index: 1;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    #logo{
+        position: absolute;
+        opacity: 20%;
+        scale: 50%;
+        top: -40%;
+        right: -7%;
+        z-index: 1;
+    }
+}
+@media only screen and (max-width: 600px) {
+#logo{
+    position: absolute;
+    opacity: 20%;
+    scale: 40%;
+    top: -75%;
+    right: 15%;
+    z-index: 1;
+}
+}

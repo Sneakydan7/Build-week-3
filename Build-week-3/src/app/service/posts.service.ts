@@ -9,16 +9,16 @@ import { Auth } from '../auth/auth';
 })
 export class PostsService {
   URL = environment.apiURL;
-
+  isEditing: boolean = false;
+  isCreating: boolean = false;
   constructor(private http: HttpClient) {}
 
   getPosts() {
     return this.http.get<Posts[]>(`${this.URL}/posts`);
   }
 
-
-  getPostsById(id:number){
-    return this.http.get<Posts>(`${this.URL}/posts/${id}`)
+  getPostsById(id: number) {
+    return this.http.get<Posts>(`${this.URL}/posts/${id}`);
   }
 
   getUserId(): number {
