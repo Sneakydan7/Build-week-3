@@ -9,7 +9,56 @@
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
-.nav-color{
+.nav-color {
   background-color: #272829;
   color: #f4eee0;
+}
+
+.log-out {
+  border: none;
+  width: 35px;
+  height: 35px;
+}
+.color-change-5x {
+  animation: color-change-5x 15s linear infinite alternate both;
+}
+@keyframes color-change-5x {
+  0% {
+    background: #e4eecb;
+  }
+  25% {
+    background: #8fd01c;
+  }
+  50% {
+    background: #0a3c05;
+  }
+  75% {
+    background: #598b18;
+  }
+  100% {
+    background: #cee492;
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+@media (max-width: 991.98px) {
+  .sticky-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.nav-link i,
+.btn i {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover i,
+.btn:hover i {
+  color: green;
 }

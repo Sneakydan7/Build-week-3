@@ -13,12 +13,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./view.component.scss'],
 })
 export class ViewComponent implements OnInit {
-  postId!: number;
+  postId!: number | null;
   post!: Posts;
   postArr: Posts[] = [];
   id: number = 0;
   URL = environment.apiURL;
   isEditing = this.postSrv.isEditing;
+  isCreating = this.postSrv.isCreating;
 
   constructor(
     private route: ActivatedRoute,
@@ -42,8 +43,6 @@ export class ViewComponent implements OnInit {
       this.postSrv.getPostsById(this.postId).subscribe((post) => {
         this.post = post;
 
-        console.log(this.post);
-
         let title = document.getElementById('title') as HTMLInputElement;
         let body = document.getElementById('body') as HTMLInputElement;
 
@@ -53,7 +52,7 @@ export class ViewComponent implements OnInit {
     });
   }
 
-  modifyPost(form: NgForm) {
+  modifyPost() {
     let title = document.getElementById('title') as HTMLInputElement;
     let body = document.getElementById('body') as HTMLInputElement;
     this.modifyRequest(
@@ -82,5 +81,34 @@ export class ViewComponent implements OnInit {
       .subscribe((data) => {
         this.postId = data.id;
       });
+  }
+
+  createPost() {
+    let title = document.getElementById('title-create') as HTMLInputElement;
+    let body = document.getElementById('body-create') as HTMLInputElement;
+    this.createRequest(
+      this.postSrv.getUserId(),
+      title.value,
+      body.value,
+      this.id
+    );
+  }
+
+  createRequest(
+    userIdPost: number,
+    titlePost: string,
+    bodyPost: string,
+    idPost: number
+  ) {
+    const newPost: Posts = {
+      userId: userIdPost,
+      title: titlePost,
+      body: bodyPost,
+      id: idPost,
+    };
+
+    console.log(newPost);
+    this.http.post<Posts>(`${this.URL}/posts`, newPost).subscribe();
+    console.log(newPost);
   }
 }
