@@ -18,11 +18,11 @@ import {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [
-    trigger('rotateImage', [
-      state('initial', style({ transform: 'rotate(0deg)' })),
-      state('rotated', style({ transform: 'rotate(360deg)' })),
-      transition('initial => rotated', animate('1s linear')),
-      transition('rotated => initial', animate('1s linear')),
+    trigger('flipImage', [
+      state('initial', style({ transform: 'scaleX(1)' })),
+      state('flipped', style({ transform: 'scaleX(-1)' })),
+      transition('initial => flipped', animate('1s linear')),
+      transition('flipped => initial', animate('1s linear')),
     ]),
   ],
 })
@@ -58,11 +58,11 @@ export class HomeComponent implements OnInit {
 
   rotateImage() {
     this.showOtherImage = !this.showOtherImage;
-    this.rotateState = this.rotateState === 'initial' ? 'rotated' : 'initial';
+    this.rotateState = this.rotateState === 'initial' ? 'flipped' : 'initial';
   }
 
   onRotateStart(event: any) {
-    if (event.toState === 'rotated') {
+    if (event.toState === 'flipped') {
       this.showOtherImage = true;
     }
   }
