@@ -53,6 +53,7 @@ export class HomeComponent implements OnInit {
     this.id = this.postsSrv.getUserId();
     this.getUserJSON();
     console.log(this.id);
+    console.log(this.postsSrv.password);
     this.http.get<Posts[]>(`${this.URL}/posts`).subscribe((res) => {
       let update: Posts[] = res.filter((user) => user.userId === this.id);
       this.posts = update;
@@ -100,7 +101,7 @@ export class HomeComponent implements OnInit {
   modifyUser(userIdMod: number, bioMod: string, img: string) {
     const user: UserProfile = {
       email: this.userProfile.email,
-      password: this.userProfile.password,
+      password: this.postsSrv.password,
       name: this.userProfile.name,
       lastName: this.userProfile.lastName,
       biografia: bioMod,

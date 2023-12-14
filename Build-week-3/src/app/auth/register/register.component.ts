@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { PostsService } from 'src/app/service/posts.service';
 import {
   FormGroup,
   FormBuilder,
@@ -20,7 +21,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private authSrv: AuthService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private postSrv: PostsService
   ) {
     this.registerForm = this.fb.group({
       name: new FormControl('', [
@@ -73,6 +75,7 @@ export class RegisterComponent implements OnInit {
       if (this.registerForm && this.passwordsMatch()) {
         this.insertImage();
         this.authSrv.register(this.registerForm.value).subscribe();
+
         console.log(this.registerForm.value);
       } else {
         if (this.registerForm) {
