@@ -10,15 +10,6 @@
       "id": 2
     },
     {
-      "email": "daniele.010@hotmail.it",
-      "password": "$2a$10$1T3mgDkAPpPExxbRFj3h8Oy//Rse1U4zoOHsm.5XWFNbV493gSWiy",
-      "name": "Daniele",
-      "lastName": "Cagnoni",
-      "biografia": "Full-stack dev in training!",
-      "image": null,
-      "id": 3
-    },
-    {
       "email": "marco@m.it",
       "password": "$2a$10$HZtghu2pdFMnpjPFyobfCOZcf6WGq263ePYOlEh8vrgcpmJBkoUC.",
       "name": "marco",
@@ -62,7 +53,15 @@
       "gender": "uomo",
       "biografia": "a",
       "image": null,
-      "privacyAccepted": true,
+      "privacyAccepted": true
+    },
+    {
+      "email": "daniele.010@hotmail.it",
+      "password": "$2a$10$txDkp3wLoSHvDY6XnnZHOOd1vDCkU286Ox2irZb9ZMgJfvELNhQVK",
+      "name": "Daniele",
+      "lastName": "Cagnoni",
+      "biografia": "ciao!!!!!",
+      "image": "https://www.cartoni-animati.com/wp-content/uploads/paperino.jpg",
       "id": 8
     }
   ],
