@@ -53,6 +53,17 @@
       "biografia": "pippo",
       "image": null,
       "id": 7
+    },
+    {
+      "email": "cosmin@petrea.it",
+      "password": "$2a$10$8jOMTyRkPA79pVhN5snJS.LNyydQOy4NCHS66LkUzcYuvzBFSDNVi",
+      "name": "Cosmin",
+      "lastName": "Petrea",
+      "gender": "uomo",
+      "biografia": "ciao ciao",
+      "image": null,
+      "privacyAccepted": true,
+      "id": 8
     }
   ],
   "posts": [
@@ -477,10 +488,10 @@
       "body": "sunt repellendus quae\nest asperiores aut deleniti esse accusamus repellendus quia aut\nquia dolorem unde\neum tempora esse dolore"
     },
     {
-      "userId": 8,
+      "title": "cosmin",
+      "body": "ciao",
       "id": 71,
-      "title": "et iusto veniam et illum aut fuga",
-      "body": "occaecati a doloribus\niste saepe consectetur placeat eum voluptate dolorem et\nqui quo quia voluptas\nrerum ut id enim velit est perferendis"
+      "userId": 8
     },
     {
       "userId": 8,
