@@ -13,7 +13,6 @@ import {
   animate,
 } from '@angular/animations';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -38,8 +37,6 @@ export class HomeComponent implements OnInit {
   URL = environment.apiURL;
   userImg!: string | null;
 
-
-
   rotateState: string = 'initial';
   showOtherImage: boolean = false;
 
@@ -47,7 +44,7 @@ export class HomeComponent implements OnInit {
     private postsSrv: PostsService,
     private authSrv: AuthService,
     private http: HttpClient,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -62,7 +59,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-
   rotateImage() {
     this.showOtherImage = !this.showOtherImage;
     this.rotateState = this.rotateState === 'initial' ? 'rotated' : 'initial';
@@ -74,17 +70,15 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  isEditingChange(id: number) {
+    this.postsSrv.isEditing = true;
+    this.router.navigate(['/view', id]);
+    this.postsSrv.isCreating = false;
+  }
 
-
-isEditingChange(id:number){
-  this.postsSrv.isEditing = true
-  this.router.navigate(['/view' , id])
-}
-
-isEditingView(id:number){
-  this.postsSrv.isEditing = false
-  this.router.navigate(['/view' , id])
-}
-
-
+  isEditingView(id: number) {
+    this.postsSrv.isEditing = false;
+    this.router.navigate(['/view', id]);
+    this.postsSrv.isCreating = false;
+  }
 }
