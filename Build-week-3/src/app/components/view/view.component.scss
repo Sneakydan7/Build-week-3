@@ -1,7 +1,48 @@
+
 img{
     width: 100%;
+}
+.bottoni{
+    padding: 2rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+
+.border{
+    border-bottom: 1px solid black;
+}
+@media screen and (min-width:767) and (max-width:992px) {
+    img{
+        width: 140%;
+    }
+}
+@media screen and (min-width: 200px) and (max-width: 767px) {
+    // img{
+    //     width: 174%
+    // }
+}
+@media screen and (max-width:559px) {
+    img{
+        display: none;
+    }
+    .col-6{
+        width: 100%;
+    }
 }
 :host{
     display: block;
     padding-top:  80px;
+}
+.card-bg{
+    background-color: #EFEBD1;
+}
+.card-header{
+    background-color: #3F5045;
+}
+#main-container{
+    margin-top: 60px;
+}
+.custom-bg{
+    background-color: #EFEBD1;
 }

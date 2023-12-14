@@ -9,7 +9,7 @@
       (ngSubmit)="register()"
     >
       <div
-        class="form-group mt-2 d-flex align-items-center justify-content-evenly"
+        class="form-group inputNames mt-2 d-flex align-items-center justify-content-evenly"
       >
         <input
           type="text"
@@ -118,6 +118,16 @@
           formControlName="password"
           id="password"
           placeholder="Password"
+          class="form-control mt-2"
+        />
+      </div>
+
+      <div class="form-group">
+        <input
+          type="password"
+          formControlName="confirmPassword"
+          id="confirmPassword"
+          placeholder="Confirm Password"
           class="form-control mt-2"
         />
       </div>

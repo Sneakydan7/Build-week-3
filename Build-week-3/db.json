@@ -10,15 +10,6 @@
       "id": 2
     },
     {
-      "email": "daniele.010@hotmail.it",
-      "password": "$2a$10$1T3mgDkAPpPExxbRFj3h8Oy//Rse1U4zoOHsm.5XWFNbV493gSWiy",
-      "name": "Daniele",
-      "lastName": "Cagnoni",
-      "biografia": "Full-stack dev in training!",
-      "image": null,
-      "id": 3
-    },
-    {
       "email": "marco@m.it",
       "password": "$2a$10$HZtghu2pdFMnpjPFyobfCOZcf6WGq263ePYOlEh8vrgcpmJBkoUC.",
       "name": "marco",

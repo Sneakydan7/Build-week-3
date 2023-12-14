@@ -20,13 +20,12 @@
         <h1 class="custom-text-color">My Blog</h1>
         <div
           class="image-container"
-          [@rotateImage]="rotateState"
-          (@rotateImage.start)="onRotateStart($event)"
+          [@flipImage]="rotateState"
+          (@flipImage.start)="onRotateStart($event)"
           (click)="rotateImage()"
         >
           <img
             class="object-fit-contain profile-image float-start"
-            *ngIf="!this.userImg"
             [src]="
               showOtherImage
                 ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmx4iDIRFHiqVlS_QFaQ2hHEgIc39uz0bFHOcNc_MZSw&s'
@@ -35,7 +34,7 @@
             alt=""
           />
 
-          <img src="{{ this.userImg }}" alt="img" *ngIf="this.userImg" />
+          <img src="" alt="img" />
         </div>
 
         <div>
@@ -112,22 +111,21 @@
     </div>
     <div
       id="side-bar"
-      class="col-3 d-none d-lg-flex flex-column sidebar-color text-center p-3 custom-text-color position-relative vh-100 justify-content-around"
+      class="col-3 d-none d-lg-flex flex-column sidebar-color text-center p-3 custom-text-color position-relative vh-100 justify-content-evenly"
     >
-      <<<<<<< HEAD
-      <h1 class="custom-text-color">Welcome to My Blog</h1>
-      =======
-      <h1 class="custom-text-color">My blog</h1>
-      >>>>>>> gianni2
+      <h1 class="custom-text-color">
+        {{ user.user.name }} {{ user.user.lastName }}
+      </h1>
+
       <div
         class="image-container"
-        [@rotateImage]="rotateState"
-        (@rotateImage.start)="onRotateStart($event)"
+        [@flipImage]="rotateState"
+        (@flipImage.start)="onRotateStart($event)"
         (click)="rotateImage()"
       >
         <img
-          class="object-fit-contain profile-image"
-          *ngIf="!this.userImg"
+          class="object-fit-contain profile-image floating-image"
+          *ngIf="!this.user.user.image"
           [src]="
             showOtherImage
               ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmx4iDIRFHiqVlS_QFaQ2hHEgIc39uz0bFHOcNc_MZSw&s'
@@ -136,18 +134,41 @@
           alt=""
         />
 
-        <img src="{{ this.userImg }}" alt="img" *ngIf="this.userImg" />
+        <img src="{{ this.user.user.image }}" alt="img" />
       </div>
 
-      <div class="descrizione">
-        <p>Biografia</p>
-        <p class="mt-1 mt-xl-3 custom-text-color fs-6"></p>
-        <button class="bottone">Modifica</button>
+      <div class="descrizione" *ngIf="!showMod">
+        <small class="text-white opacity-75">About me</small>
+        <p class="mt-1 mt-xl-3 custom-text-color fs-6">
+          {{ user.user.biografia }}
+        </p>
+        <button class="btn btn-danger rounded-5" (click)="showEdit()">
+          Edit Profile
+        </button>
+      </div>
+      <div *ngIf="showMod">
+        <form #form="ngForm" (ngSubmit)="modifyPage()">
+          <input
+            type="bio"
+            id="bio"
+            name="biografia"
+            [(ngModel)]="user.user.biografia"
+          />
+          <input
+            type="text"
+            id="img"
+            name="image"
+            [(ngModel)]="user.user.image"
+          />
 
-        <textarea *ngIf="editingBiography" class="form-control"></textarea>
-        <div *ngIf="editingBiography" class="mt-2">
-          <button class="bottone">Save</button>
-        </div>
+          <button
+            type="submit"
+            class="btn btn-dark mt-4 w-100"
+            [disabled]="form.invalid"
+          >
+            Edit
+          </button>
+        </form>
       </div>
       <div
         class="button-container my-xl-5 mt-3 d-none d-lg-flex align-self-center"
