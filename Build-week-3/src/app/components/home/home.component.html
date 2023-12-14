@@ -114,7 +114,11 @@
       id="side-bar"
       class="col-3 d-none d-lg-flex flex-column sidebar-color text-center p-3 custom-text-color position-relative vh-100 justify-content-around"
     >
+      <<<<<<< HEAD
       <h1 class="custom-text-color">Welcome to My Blog</h1>
+      =======
+      <h1 class="custom-text-color">My blog {{ this.name }}</h1>
+      >>>>>>> gianni2
       <div
         class="image-container"
         [@rotateImage]="rotateState"
@@ -135,13 +139,24 @@
         <img src="{{ this.userImg }}" alt="img" *ngIf="this.userImg" />
       </div>
 
-      <div>
-        <p class="mt-1 mt-xl-3 custom-text-color fs-6">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic sunt
-          corrupti quia fuga autem dolore, eius, aut placeat labore cum
-          molestias, pariatur delectus dolorum! Ratione totam quibusdam
-          temporibus adipisci! Reprehenderit.
+      <div class="descrizione">
+        <p>Biografia</p>
+        <p
+          *ngIf="!editingBiography"
+          class="mt-1 mt-xl-3 custom-text-color fs-6"
+        >
+          {{ this.biografia }}
         </p>
+        <button class="bottone" (click)="editBiography()">Modifica</button>
+
+        <textarea
+          *ngIf="editingBiography"
+          [(ngModel)]="biografia"
+          class="form-control"
+        ></textarea>
+        <div *ngIf="editingBiography" class="mt-2">
+          <button class="bottone" (click)="saveBiography()">Save</button>
+        </div>
       </div>
       <div
         class="button-container my-xl-5 mt-3 d-none d-lg-flex align-self-center"

@@ -24,11 +24,6 @@ import {
       transition('initial => rotated', animate('1s linear')),
       transition('rotated => initial', animate('1s linear')),
     ]),
-    trigger('fadeOutIn', [
-      state('void', style({ opacity: 0 })),
-      state('*', style({ opacity: 1 })),
-      transition('void <=> *', animate('1s')),
-    ]),
   ],
 })
 export class HomeComponent implements OnInit {
@@ -39,6 +34,7 @@ export class HomeComponent implements OnInit {
 
   rotateState: string = 'initial';
   showOtherImage: boolean = false;
+  editingBiography: boolean = false;
 
   constructor(
     private postsSrv: PostsService,
@@ -50,6 +46,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.postsSrv.getUserId();
     this.userImg = this.authSrv.getUserImage();
+
     console.log(this.id);
     this.http.get<Posts[]>(`${this.URL}/posts`).subscribe((res) => {
       let update: Posts[] = res.filter((user) => user.userId === this.id);

@@ -49,6 +49,17 @@ button:hover {
   width: 100%;
 }
 
+.nav-link-signup {
+  color: #000;
+  text-decoration: underline;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.nav-link-signup:hover {
+  color: rgb(253, 253, 253);
+  font-size: 1.1em;
+}
+
 //ANIMATIONS//
 
 .color-change-5x {
@@ -219,5 +230,39 @@ main {
       8px 8px #3e3e3e;
     -webkit-transform: translateX(-8px) translateY(-8px);
     transform: translateX(-8px) translateY(-8px);
+  }
+}
+
+/* Stili per schermi di piccole dimensioni (telefono) */
+
+@media screen and (max-width: 672px) {
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../../assets/papperosfondo.png);
+    height: 100vh;
+    width: 100%;
+  }
+
+  .fs-7 {
+    font-size: 13px;
+  }
+
+  form {
+    width: 100%;
+    max-width: 600px;
+    background-color: #5f6f52be;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: all 0.5s;
+    backdrop-filter: blur(2px);
+    color: whitesmoke;
+    margin-top: 5%;
+  }
+
+  button {
+    width: 100%;
   }
 }
