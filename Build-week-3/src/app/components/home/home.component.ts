@@ -24,11 +24,6 @@ import {
       transition('initial => rotated', animate('1s linear')),
       transition('rotated => initial', animate('1s linear')),
     ]),
-    trigger('fadeOutIn', [
-      state('void', style({ opacity: 0 })),
-      state('*', style({ opacity: 1 })),
-      transition('void <=> *', animate('1s')),
-    ]),
   ],
 })
 export class HomeComponent implements OnInit {

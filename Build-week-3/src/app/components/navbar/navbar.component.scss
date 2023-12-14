@@ -9,7 +9,26 @@
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
-.nav-color{
+.nav-color {
   background-color: #272829;
   color: #f4eee0;
+}
+
+@media (max-width: 991.98px) {
+  .sticky-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.nav-link i,
+.btn i {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover i,
+.btn:hover i {
+  color: green;
 }
