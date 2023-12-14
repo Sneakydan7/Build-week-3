@@ -41,6 +41,7 @@ export class RegisterComponent implements OnInit {
         //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z@$!%*?&]{8,}$/
         // ),
       ]),
+      confirmPassword: ['', Validators.required],
       gender: new FormControl('', [Validators.required]),
 
       biografia: new FormControl(null, [
@@ -69,14 +70,26 @@ export class RegisterComponent implements OnInit {
 
   register() {
     try {
-      if (this.registerForm) {
+      if (this.registerForm && this.passwordsMatch()) {
         this.insertImage();
         this.authSrv.register(this.registerForm.value).subscribe();
         console.log(this.registerForm.value);
+      } else {
+        if (this.registerForm) {
+          this.registerForm.get('password')?.setValue('');
+          this.registerForm.get('confirmPassword')?.setValue('');
+        }
+        alert('Le password non corrispondono.');
       }
     } catch (error: any) {
       alert(error);
       this.router.navigate(['/register']);
     }
+  }
+
+  passwordsMatch(): boolean {
+    const password = this.registerForm?.get('password')?.value;
+    const confirmPassword = this.registerForm?.get('confirmPassword')?.value;
+    return password === confirmPassword;
   }
 }

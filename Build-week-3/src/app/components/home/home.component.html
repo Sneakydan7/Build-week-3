@@ -20,8 +20,8 @@
         <h1 class="custom-text-color">My Blog</h1>
         <div
           class="image-container"
-          [@rotateImage]="rotateState"
-          (@rotateImage.start)="onRotateStart($event)"
+          [@flipImage]="rotateState"
+          (@flipImage.start)="onRotateStart($event)"
           (click)="rotateImage()"
         >
           <img
@@ -119,12 +119,13 @@
 
       <div
         class="image-container"
-        [@rotateImage]="rotateState"
-        (@rotateImage.start)="onRotateStart($event)"
+        [@flipImage]="rotateState"
+        (@flipImage.start)="onRotateStart($event)"
         (click)="rotateImage()"
       >
         <img
-          class="object-fit-contain profile-image"
+          class="object-fit-contain profile-image floating-image"
+          *ngIf="!this.user.user.image"
           [src]="
             showOtherImage
               ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmx4iDIRFHiqVlS_QFaQ2hHEgIc39uz0bFHOcNc_MZSw&s'
@@ -133,7 +134,7 @@
           alt=""
         />
 
-        <img src="" alt="img" />
+        <img src="{{ this.user.user.image }}" alt="img" />
       </div>
 
       <div class="descrizione" *ngIf="!showMod">
