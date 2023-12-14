@@ -1,10 +1,11 @@
 :host {
-  height: calc(100vh - 4rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url(https://img.freepik.com/free-vector/flat-design-polygonal-background_23-2148904403.jpg?w=996&t=st=1702382857~exp=1702383457~hmac=53c6d1082cd72dd7ac8e2839338d30c7002db7873bd1df3de0a80c54a742a9cd);
+  height: 100vh;
+  display: block;
+
   background-size: cover;
+
+  animation: color-change-5x 8s linear infinite alternate both;
+  z-index: -1;
   background-position: center;
 }
 
@@ -38,4 +39,30 @@ button:hover {
 .text-error {
   color: red;
   font-weight: bold;
+}
+.color-change-5x {
+  animation: color-change-5x 15s linear infinite alternate both;
+}
+main {
+  background-image: url(../../../assets/papperosfondo.png);
+  height: 100vh;
+  width: 100%;
+}
+
+@keyframes color-change-5x {
+  0% {
+    background: #e4eecb;
+  }
+  25% {
+    background: #8fd01c;
+  }
+  50% {
+    background: #0a3c05;
+  }
+  75% {
+    background: #598b18;
+  }
+  100% {
+    background: #cee492;
+  }
 }
