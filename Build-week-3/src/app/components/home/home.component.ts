@@ -99,19 +99,16 @@ export class HomeComponent implements OnInit {
 
   modifyUser(userIdMod: number, bioMod: string, img: string) {
     const user: UserProfile = {
-      email: this.userProfile.email,
-      password: this.userProfile.password,
-      name: this.userProfile.name,
-      lastName: this.userProfile.lastName,
       biografia: bioMod,
       image: img,
       id: this.id,
     };
     this.http
-      .put<UserProfile>(`${this.URL}/users/${this.id}`, user)
+      .patch<UserProfile>(`${this.URL}/users/${this.id}`, user)
       .subscribe((user) => {
         this.userProfile = user;
-        console.log(user);
+        localStorage.setItem('user', JSON.stringify(this.userProfile));
+        location.reload();
       });
   }
 
