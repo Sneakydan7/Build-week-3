@@ -29,29 +29,30 @@ export class ViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      this.postId = +params['postId'];
-      console.log(this.postId);
+    if (this.isEditing) {
+      this.route.params.subscribe((params) => {
+        this.postId = +params['postId'];
+        console.log(this.postId);
 
-      this.id = this.postSrv.getUserId();
-      this.postSrv.getPosts().subscribe((res) => {
-        let update: Posts[] = res.filter((user) => user.userId === this.id);
-        this.postArr = update;
-        console.log(this.postArr);
-        return this.postArr;
+        this.id = this.postSrv.getUserId();
+        this.postSrv.getPosts().subscribe((res) => {
+          let update: Posts[] = res.filter((user) => user.userId === this.id);
+          this.postArr = update;
+          console.log(this.postArr);
+          return this.postArr;
+        });
+        this.postSrv.getPostsById(this.postId).subscribe((post) => {
+          this.post = post;
+
+          let title = document.getElementById('title') as HTMLInputElement;
+          let body = document.getElementById('body') as HTMLInputElement;
+
+          title.value = this.post.title;
+          body.value = this.post.body;
+        });
       });
-      this.postSrv.getPostsById(this.postId).subscribe((post) => {
-        this.post = post;
-
-        let title = document.getElementById('title') as HTMLInputElement;
-        let body = document.getElementById('body') as HTMLInputElement;
-
-        title.value = this.post.title;
-        body.value = this.post.body;
-      });
-    });
+    }
   }
-
   modifyPost() {
     let title = document.getElementById('title') as HTMLInputElement;
     let body = document.getElementById('body') as HTMLInputElement;

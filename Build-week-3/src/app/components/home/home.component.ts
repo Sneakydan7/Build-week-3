@@ -109,7 +109,7 @@ export class HomeComponent implements OnInit {
       id: this.id,
     };
     this.http
-      .put<UserProfile>(`${this.URL}/users/${this.id}`, user)
+      .patch<UserProfile>(`${this.URL}/users/${this.id}`, user)
       .subscribe((user) => {
         this.userProfile = user;
         console.log(user);

@@ -46,21 +46,11 @@
       "id": 7
     },
     {
-      "email": "123@123.com",
-      "password": "$2a$10$bTeIJlOlpM0Zr4lw4rMOn.E9TR4RuznZe/B9VTQbn1FuwlKwAOXtS",
-      "name": "kavidu",
-      "lastName": "francesco",
-      "gender": "uomo",
-      "biografia": "a",
-      "image": null,
-      "privacyAccepted": true
-    },
-    {
       "email": "daniele.010@hotmail.it",
       "password": "$2a$10$ibqWyP2XwQRTnUNPXylagu6du3HPPsVKxUUs88u1Ec897Bq0Lpn1u",
       "name": "Daniele",
       "lastName": "Cagnoni",
-      "biografia": "CIAOOO",
+      "biografia": "ciao.",
       "image": "https://www.cartoni-animati.com/wp-content/uploads/paperino.jpg",
       "id": 8
     }
@@ -487,10 +477,10 @@
       "body": "sunt repellendus quae\nest asperiores aut deleniti esse accusamus repellendus quia aut\nquia dolorem unde\neum tempora esse dolore"
     },
     {
-      "userId": 8,
+      "title": "Ciao!",
+      "body": "Sono io",
       "id": 71,
-      "title": "et iusto veniam et illum aut fuga",
-      "body": "occaecati a doloribus\niste saepe consectetur placeat eum voluptate dolorem et\nqui quo quia voluptas\nrerum ut id enim velit est perferendis"
+      "userId": 8
     },
     {
       "userId": 8,
@@ -667,37 +657,16 @@
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
     },
     {
-      "userId": 0,
-      "id": 101,
-      "title": "",
-      "body": ""
+      "userId": 8,
+      "title": "Ciao!",
+      "body": "Belli mia",
+      "id": 101
     },
     {
-      "userId": 0,
-      "id": 102,
-      "title": "",
-      "body": ""
-    },
-    {
-      "id": 103
-    },
-    {
-      "userId": 0,
-      "id": 104,
-      "title": "",
-      "body": ""
-    },
-    {
-      "userId": 0,
-      "id": 105,
-      "title": "",
-      "body": ""
-    },
-    {
-      "userId": 0,
-      "id": 106,
-      "title": "",
-      "body": ""
+      "userId": 8,
+      "title": "im british",
+      "body": "HELLO",
+      "id": 102
     }
   ]
 }
