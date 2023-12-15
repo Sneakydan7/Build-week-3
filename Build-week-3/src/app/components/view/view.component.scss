@@ -35,9 +35,6 @@ img {
 .card-header {
   background-color: #3f5045;
 }
-#main-container {
-  margin-top: 60px;
-}
 
 .redbox {
   position: absolute;
@@ -111,7 +108,9 @@ img {
 .custom-bg {
   background-color: #efebd1;
 }
-
+.fade-in-fwd {
+  animation: fade-in-fwd 2.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
 .custom-text-color {
   color: #f0ebce;
 }
@@ -147,6 +146,16 @@ img {
   animation: swing-in-top-fwd 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
+@keyframes fade-in-fwd {
+  0% {
+    transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
 @keyframes swing-in-top-fwd {
   0% {
     transform: rotateX(-100deg);

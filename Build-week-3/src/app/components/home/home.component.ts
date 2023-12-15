@@ -127,4 +127,9 @@ export class HomeComponent implements OnInit {
       this.userProfile = user;
     });
   }
+
+  modifiedAlert() {
+    alert('Profilo modificato con successo , riaccedi per vedere le modifiche');
+    this.authSrv.logout();
+  }
 }

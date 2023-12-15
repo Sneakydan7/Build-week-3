@@ -9,14 +9,18 @@
     >
       {{ post.title }}
     </h2>
-    <div class="card m-3 custom-bg p-0 swing-in-top-fwd">
+    <div class="card m-3 custom-bg p-0 fade-in-fwd">
       <div class="row g-0">
         <div class="col-4">
-          <img src="{{ post.img }}" class="img-fluid rounded-start" alt="" />
+          <img
+            src="{{ post.img }}"
+            class="img-fluid rounded-start"
+            alt=""
+            style="height: 500px; width: 500px"
+          />
         </div>
         <div class="col-8">
           <div class="card-body d-flex flex-column h-100">
-            <h5 class="card-title fs-1 fw-bolder">{{ post.title }}</h5>
             <p class="card-text fs-3 flex-grow-1">
               {{ post.body }}
             </p>
