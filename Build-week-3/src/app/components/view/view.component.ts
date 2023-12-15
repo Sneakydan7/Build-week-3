@@ -20,7 +20,7 @@ export class ViewComponent implements OnInit {
   URL = environment.apiURL;
   isEditing = this.postSrv.isEditing;
   isCreating = this.postSrv.isCreating;
-
+  isViewing = this.postSrv.isViewing;
   constructor(
     private route: ActivatedRoute,
     private postSrv: PostsService,
@@ -29,37 +29,43 @@ export class ViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      this.postId = +params['postId'];
-      console.log(this.postId);
+    console.log(this.isViewing);
+    console.log(this.isEditing);
+    if (this.isEditing || this.isViewing) {
+      this.route.params.subscribe((params) => {
+        this.postId = +params['postId'];
+        console.log(this.postId);
 
-      this.id = this.postSrv.getUserId();
-      this.postSrv.getPosts().subscribe((res) => {
-        let update: Posts[] = res.filter((user) => user.userId === this.id);
-        this.postArr = update;
-        console.log(this.postArr);
-        return this.postArr;
+        this.id = this.postSrv.getUserId();
+        this.postSrv.getPosts().subscribe((res) => {
+          let update: Posts[] = res.filter((user) => user.userId === this.id);
+          this.postArr = update;
+          console.log(this.postArr);
+          return this.postArr;
+        });
+        this.postSrv.getPostsById(this.postId).subscribe((post) => {
+          this.post = post;
+
+          let title = document.getElementById('title') as HTMLInputElement;
+          let body = document.getElementById('body') as HTMLInputElement;
+
+          title.value = this.post.title;
+          body.value = this.post.body;
+        });
       });
-      this.postSrv.getPostsById(this.postId).subscribe((post) => {
-        this.post = post;
-
-        let title = document.getElementById('title') as HTMLInputElement;
-        let body = document.getElementById('body') as HTMLInputElement;
-
-        title.value = this.post.title;
-        body.value = this.post.body;
-      });
-    });
+    }
   }
-
   modifyPost() {
     let title = document.getElementById('title') as HTMLInputElement;
     let body = document.getElementById('body') as HTMLInputElement;
+    let image = document.getElementById('img') as HTMLInputElement;
+
     this.modifyRequest(
       title.value,
       body.value,
       this.id,
-      this.postSrv.getUserId()
+      this.postSrv.getUserId(),
+      image.value
     );
   }
 
@@ -67,13 +73,15 @@ export class ViewComponent implements OnInit {
     titleMod: string,
     bodyMod: string,
     idMod: number,
-    userIdMod: number
+    userIdMod: number,
+    imgMod: string
   ) {
     const post: Posts = {
       title: titleMod,
       body: bodyMod,
       id: idMod,
       userId: userIdMod,
+      img: imgMod,
     };
 
     this.http
@@ -86,11 +94,13 @@ export class ViewComponent implements OnInit {
   createPost() {
     let title = document.getElementById('title-create') as HTMLInputElement;
     let body = document.getElementById('body-create') as HTMLInputElement;
+    let image = document.getElementById('img-create') as HTMLInputElement;
     this.createRequest(
       this.postSrv.getUserId(),
       title.value,
       body.value,
-      this.id
+      this.id,
+      image.value
     );
   }
 
@@ -98,13 +108,15 @@ export class ViewComponent implements OnInit {
     userIdPost: number,
     titlePost: string,
     bodyPost: string,
-    idPost: number
+    idPost: number,
+    imgPost: string
   ) {
     const newPost: Posts = {
       userId: userIdPost,
       title: titlePost,
       body: bodyPost,
       id: idPost,
+      img: imgPost,
     };
 
     console.log(newPost);

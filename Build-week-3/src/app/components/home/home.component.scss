@@ -2,6 +2,10 @@
   background-color: #4e6c50;
 }
 
+#section {
+  height: calc(100vh - 262px);
+}
+
 .shadow-box {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -63,8 +67,8 @@
   object-fit: contain;
 }
 
-.custom-text-color{
-    color: #F0EBCE;
+.custom-text-color {
+  color: #f0ebce;
 }
 
 .main-bg {
@@ -95,6 +99,16 @@ button {
   background-color: #f0ebce;
   border: solid 3px #395144;
   z-index: 1;
+}
+
+#edit-prof {
+  background-color: #1d221f;
+  border: none;
+  color: white;
+}
+
+#edit-prof:hover {
+  color: #f0ebce;
 }
 
 button > i {
@@ -257,20 +271,52 @@ i {
   }
 }
 
-
-.card-button-container button{
+.card-button-container button {
   transform: translateY(-1px);
   border-top: none;
   padding: 5px;
   padding-inline: 10px;
-  border:none;
+  border: none;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   margin-inline: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.card-button-container button i{
+.card-button-container button i {
   color: #1ad126;
   font-size: 20px;
+}
+.pulsate-fwd {
+  -webkit-animation: pulsate-fwd 1.7s ease-in-out infinite both;
+  animation: pulsate-fwd 1.7s ease-in-out infinite both;
+}
+
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
