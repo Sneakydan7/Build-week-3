@@ -1,57 +1,54 @@
-.sidebar-color{
-    background-color: #4E6C50;
+.sidebar-color {
+  background-color: #4e6c50;
 }
 
-.shadow-box{
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+.shadow-box {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-.image-container{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 50%;
-    border: solid 5px  #395144;
-    width: 250px;
-    height: 250px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    object-fit: center;
-    margin-inline: auto;
+.image-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  border: solid 5px #395144;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  object-fit: center;
+  margin-inline: auto;
 }
 
 @media only screen and (max-width: 600px) {
-.image-container{
+  .image-container {
     width: 50px;
     height: 50px;
-}
+  }
 }
 @media only screen and (min-width: 600px) {
-    .image-container{
-        width: 70px;
-        height: 70px;
-    }
-
+  .image-container {
+    width: 70px;
+    height: 70px;
+  }
 }
 @media only screen and (min-width: 768px) {
-    .image-container{
-        width: 100px;
-        height: 100px;
-    }
-
+  .image-container {
+    width: 100px;
+    height: 100px;
+  }
 }
 @media only screen and (min-width: 992px) {
-    .image-container{
-        width: 140px;
-        height: 140px;
-    }
-
+  .image-container {
+    width: 140px;
+    height: 140px;
+  }
 }
 @media only screen and (min-width: 1200px) {
-    .image-container{
-        width: 170px;
-        height: 170px;
-    }
-
+  .image-container {
+    width: 170px;
+    height: 170px;
+  }
 }
 // @media only screen and (min-width: 2400px){
 //     .image-container{
@@ -60,125 +57,124 @@
 //     }
 // }
 
-.profile-image{
-    width: 100%;
-    scale: 130%;
-    object-fit: contain;
+.profile-image {
+  width: 100%;
+  scale: 130%;
+  object-fit: contain;
 }
 
 .custom-text-color{
     color: #F0EBCE;
 }
 
-.main-bg{
-    background-color: #395144;
-    color: #F0EBCE;
+.main-bg {
+  background-color: #395144;
+  color: #f0ebce;
 }
 
-.main-bg h1{
-    z-index: 1;
+.main-bg h1 {
+  z-index: 1;
 }
 
 .main-bg h5 {
-    color: #AA8B56;
-    z-index: 1;
+  color: #aa8b56;
+  z-index: 1;
 }
 
-.button-container{
-    margin-top: 2rem;
-    margin-inline: auto;
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    padding: 5px;
+.button-container {
+  margin-top: 2rem;
+  margin-inline: auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 button {
-    background-color: #F0EBCE;
-    border:solid 3px  #395144;
-    z-index: 1;
+  background-color: #f0ebce;
+  border: solid 3px #395144;
+  z-index: 1;
 }
 
-button > i{
-    color: #395144;
+button > i {
+  color: #395144;
 }
 
 i {
-    font-size: larger;
+  font-size: larger;
 }
 
-.top{
-    top: 56px;
+.top {
+  top: 56px;
 }
 
 //references list styling
 
-.ref-list a{
-    margin-inline: auto;
-    width: 50%;
-    text-align: center;
-    font-size: larger;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 1rem;
-    cursor: pointer;
-    z-index: 1;
+.ref-list a {
+  margin-inline: auto;
+  width: 50%;
+  text-align: center;
+  font-size: larger;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+  z-index: 1;
 }
 
-.ref-list a:first-of-type{
-    color: #AA8B56;
+.ref-list a:first-of-type {
+  color: #aa8b56;
 }
 
-.ref-list a:hover{
-    font-weight: bold;
-    transform: scale(1.09);
+.ref-list a:hover {
+  font-weight: bold;
+  transform: scale(1.09);
 }
 
 .ref-list button {
-    border-radius: 10px;
-    background-color: #395144;
-    color: #AA8B56;
-    padding-top: 5px; 
-    padding-bottom: 5px;
-    width: 40%;
-    transition: all 0.5;
-    z-index: 1;
+  border-radius: 10px;
+  background-color: #395144;
+  color: #aa8b56;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 40%;
+  transition: all 0.5;
+  z-index: 1;
 }
 
-.ref-list button:hover{
-    font-weight: bold;
-    box-shadow: #395144 3px 3px 6px 0px;
-    transform: scale(1.05);
+.ref-list button:hover {
+  font-weight: bold;
+  box-shadow: #395144 3px 3px 6px 0px;
+  transform: scale(1.05);
 }
 
-#side-bar{
-    box-shadow: #26392f 0px 0px 11px 5px inset;
-    max-height: max-content;
+#side-bar {
+  box-shadow: #26392f 0px 0px 11px 5px inset;
+  max-height: max-content;
 }
 
-i{
-    font-size: larger;
-    color: #AA8B56;
+i {
+  font-size: larger;
+  color: #aa8b56;
 }
 
-.collapse-button{
-    background-color: #26392f;
-    color: #F0EBCE;
-    font-weight: bold;
-    border: solid #F0EBCE 2px ;
+.collapse-button {
+  background-color: #26392f;
+  color: #f0ebce;
+  font-weight: bold;
+  border: solid #f0ebce 2px;
 }
 
-.collapse-list{
-    text-decoration: none;
-    color: #AA8B56;
+.collapse-list {
+  text-decoration: none;
+  color: #aa8b56;
 }
 
-.title-P{
-    color: #1ad126;
-    text-shadow: #1d221f -3px 3px 5px;;
+.title-P {
+  color: #1ad126;
+  text-shadow: #1d221f -3px 3px 5px;
 }
-
 
 // // animatione fotoProfilo
 @keyframes rotate {
@@ -215,48 +211,48 @@ i{
 
 // card styling
 
-.card{
-    background-color: #F0EBCE;
+.card {
+  background-color: #f0ebce;
 }
 
 //logo styling
 
-#logo{
-    position: absolute;
-    opacity: 20%;
-    scale: 50%;
-    top: -10%;
-    right: -8%;
-    z-index: 1;
+#logo {
+  position: absolute;
+  opacity: 20%;
+  scale: 50%;
+  top: -10%;
+  right: -8%;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 770px) {
-    #logo{
-        position: absolute;
-        opacity: 20%;
-        scale: 40%;
-        top: -75%;
-        right: 20%;
-        z-index: 1;
-    }
+  #logo {
+    position: absolute;
+    opacity: 20%;
+    scale: 40%;
+    top: -75%;
+    right: 20%;
+    z-index: 1;
+  }
 }
 @media only screen and (min-width: 1200px) {
-    #logo{
-        position: absolute;
-        opacity: 20%;
-        scale: 50%;
-        top: -40%;
-        right: -7%;
-        z-index: 1;
-    }
+  #logo {
+    position: absolute;
+    opacity: 20%;
+    scale: 50%;
+    top: -40%;
+    right: -7%;
+    z-index: 1;
+  }
 }
 @media only screen and (max-width: 600px) {
-#logo{
+  #logo {
     position: absolute;
     opacity: 20%;
     scale: 40%;
     top: -75%;
     right: 15%;
     z-index: 1;
-}
+  }
 }
