@@ -107,7 +107,10 @@ export class HomeComponent implements OnInit {
       .patch<UserProfile>(`${this.URL}/users/${this.id}`, user)
       .subscribe((user) => {
         this.userProfile = user;
-        localStorage.setItem('user', JSON.stringify(this.userProfile));
+        // localStorage.setItem(
+        //   'user',
+        //   JSON.stringify(this.authSrv.getUserByIdJSON)
+        // );
         location.reload();
       });
   }
