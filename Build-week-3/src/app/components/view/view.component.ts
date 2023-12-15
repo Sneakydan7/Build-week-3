@@ -102,6 +102,7 @@ export class ViewComponent implements OnInit {
       this.id,
       image.value
     );
+    this.router.navigate(['/']);
   }
 
   createRequest(

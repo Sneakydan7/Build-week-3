@@ -53,6 +53,17 @@
       "biografia": "ciao.",
       "image": "https://www.cartoni-animati.com/wp-content/uploads/paperino.jpg",
       "id": 8
+    },
+    {
+      "email": "cosmin@gmail.com",
+      "password": "$2a$10$BWzORTp3DIXafA9ihEjiVON99eIIOfbDuKXgrFYaLZdQYrk1FcdFe",
+      "name": "Cosmin",
+      "lastName": "Petrea",
+      "confirmPassword": "ciao",
+      "gender": "uomo",
+      "biografia": "Developer in training..",
+      "image": "https://scontent.fqpa2-1.fna.fbcdn.net/v/t1.18169-9/12047139_1060038860673540_6480933198182118273_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=be3454&_nc_ohc=iaUNRvBOqoAAX_7htT3&_nc_ht=scontent.fqpa2-1.fna&oh=00_AfBV-SrSXPREqZ3-EU-l3SXuRiGwpK75UYrCZbQS3vtHxw&oe=65A3CB5D",
+      "id": 9
     }
   ],
   "posts": [
@@ -663,12 +674,6 @@
       "title": "Ciao!",
       "body": "Belli mia",
       "id": 101
-    },
-    {
-      "userId": 8,
-      "title": "im british",
-      "body": "HELLO",
-      "id": 102
     }
   ]
 }
