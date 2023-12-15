@@ -109,6 +109,11 @@ button {
 
 #edit-prof:hover {
   color: #f0ebce;
+  background-color: #313633;
+}
+
+.bookmark:hover {
+  background-color: #313633 !important;
 }
 
 button > i {
@@ -318,5 +323,35 @@ i {
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
+  }
+}
+.slide-in-left {
+  animation: slide-in-left 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.text-shadow-pop-bottom {
+  animation: text-shadow-pop-bottom 1s both;
+}
+
+@keyframes text-shadow-pop-bottom {
+  0% {
+    text-shadow: 0 0 #555, 0 0 #555, 0 0 #555, 0 0 #555, 0 0 #555, 0 0 #555,
+      0 0 #555, 0 0 #555;
+    transform: translateY(0);
+  }
+  100% {
+    text-shadow: 0 1px #555, 0 2px #555, 0 3px #555, 0 4px #555, 0 5px #555,
+      0 6px #555, 0 7px #555, 0 8px #555;
+    transform: translateY(-8px);
   }
 }

@@ -38,6 +38,15 @@ img {
 #main-container {
   margin-top: 60px;
 }
+
+.redbox {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  z-index: -15;
+}
+
 .custom-bg {
   background-color: #efebd1;
 }
@@ -81,7 +90,10 @@ img {
 .container-add {
   background-color: #323436;
 }
-
+.customshadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
 .logo {
   position: absolute;
 }
@@ -128,5 +140,22 @@ img {
       8px 8px #3e3e3e;
     -webkit-transform: translateX(-8px) translateY(-8px);
     transform: translateX(-8px) translateY(-8px);
+  }
+}
+
+.swing-in-top-fwd {
+  animation: swing-in-top-fwd 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes swing-in-top-fwd {
+  0% {
+    transform: rotateX(-100deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 1;
   }
 }

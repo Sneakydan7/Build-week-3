@@ -9,7 +9,7 @@
     >
       {{ post.title }}
     </h2>
-    <div class="card m-3 custom-bg p-0">
+    <div class="card m-3 custom-bg p-0 swing-in-top-fwd">
       <div class="row g-0">
         <div class="col-4">
           <img src="{{ post.img }}" class="img-fluid rounded-start" alt="" />
@@ -30,62 +30,66 @@
   </div>
 </div>
 
-<div class="container vh-100" *ngIf="isEditing && !isCreating">
-  <h2>Edit Post # {{ postId }}</h2>
-  <form
-    #form="ngForm"
-    class="px-3 py-4 rounded-3 text-white"
-    (ngSubmit)="modifyPost()"
-  >
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input
-        type="title"
-        id="title"
-        name="title"
-        class="form-control"
-        [(ngModel)]="post.title"
-      />
-    </div>
-    <div class="form-group">
-      <label for="body">body</label>
-      <input
-        type="body"
-        id="body"
-        name="body"
-        class="form-control"
-        [(ngModel)]="post.body"
-        style="height: 150px"
-      />
-    </div>
-
-    <div class="form-group">
-      <img
-        src="{{ post.img }}"
-        alt=""
-        class="rounded-5 my-2"
-        style="height: 150px; width: 150px"
-        *ngIf="post.img"
-      />
-      <label for="img" class="ms-3">Image preview</label>
-      <input
-        type="text"
-        id="img"
-        name="img"
-        class="form-control"
-        [(ngModel)]="post.img"
-      />
-    </div>
-    <button
-      type="submit"
-      class="btn btn-dark mt-4 w-100"
-      [disabled]="form.invalid"
+<div class="container vh-100 swing-in-top-fwd" *ngIf="isEditing && !isCreating">
+  <div>
+    <form
+      #form="ngForm"
+      class="px-3 py-4 rounded-3 text-white form-add custom-popup"
+      (ngSubmit)="modifyPost()"
     >
-      Edit
-    </button>
-  </form>
+      <h2 class="text-center text-dark">Edit Post / # {{ postId }}</h2>
+      <div class="form-group">
+        <label for="title" class="text-dark">Title</label>
+        <input
+          type="title"
+          id="title"
+          name="title"
+          class="form-control customshadow"
+          [(ngModel)]="post.title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="body" class="text-dark">body</label>
+        <input
+          type="body"
+          id="body"
+          name="body"
+          class="form-control customshadow"
+          [(ngModel)]="post.body"
+          style="padding-bottom: 150px"
+        />
+      </div>
+
+      <div class="form-group">
+        <img
+          src="{{ post.img }}"
+          alt=""
+          class="rounded-5 my-2 customshadow"
+          style="height: 150px; width: 150px"
+          *ngIf="post.img"
+        />
+        <label for="img" class="ms-3 text-dark">Image preview</label>
+        <input
+          type="text"
+          id="img"
+          name="img"
+          class="form-control customshadow"
+          [(ngModel)]="post.img"
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-dark mt-4 w-100"
+        [disabled]="form.invalid"
+      >
+        Edit
+      </button>
+      <img src="../../../assets/Logo.png" alt="" class="form-img" />
+    </form>
+  </div>
 </div>
-<div class="container-add vh-100" *ngIf="isCreating">
+
+<div class="container-add vh-100 swing-in-top-fwd" *ngIf="isCreating">
   <div class="">
     <form
       #form="ngForm"
@@ -98,14 +102,17 @@
         <input
           type="title"
           id="title-create"
-          class="form-control"
+          class="form-control customshadow"
           placeholder=""
         />
       </div>
       <div class="form-group mt-3 text-start">
         <label for="body" class="text-dark">Comments</label>
-        <textarea id="body-create" class="form-control" style="height: 200px">
-        </textarea>
+        <input
+          id="body-create"
+          class="form-control customshadow"
+          style="padding-bottom: 150px"
+        />
       </div>
       <div class="form-group mt-3 text-start">
         <label for="img" class="text-dark"
@@ -114,7 +121,7 @@
         <input
           type="text"
           id="img-create"
-          class="form-control"
+          class="form-control customshadow"
           placeholder="https//..."
         />
       </div>
