@@ -1,106 +1,124 @@
+<div
+  id="main-container"
+  class="mx-0 container-fluid position-fixed top-0 vh-100 bg-dark"
+  *ngIf="!isEditing && !isCreating"
+>
+  <div class="row d-grid gap-2 d-flex p-5 justify-content-center">
+    <h2
+      class="card-header p-3 text-center custom-text-color rounded-top-2 mb-3"
+    >
+      View Post
+    </h2>
+    <!-- CARD START -->
+    <div class="card m-3 custom-bg p-0">
+      <div class="row g-0">
+        <div class="col-4">
+          <img
+            src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/14/yvA5SpUH-IMG-Worlds-1200x800.jpg"
+            class="img-fluid rounded-start"
+            alt="post-img"
+          />
+        </div>
+        <div class="col-8">
+          <div class="card-body d-flex flex-column h-100">
+            <h5 class="card-title fs-1 fw-bolder">{{ post.title }}</h5>
+            <p class="card-text fs-3 flex-grow-1">
+              {{ post.body }}
+            </p>
+            <button type="button" class="btn btn-warning w-25 ms-auto">
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CARD END -->
+    <!-- <div class="col-4">
+          <img
+            class="img-fluid"
+            src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/14/yvA5SpUH-IMG-Worlds-1200x800.jpg"
+            alt=""
+          />
+        </div>
+        <div class="col-8">
+          <div class="card-body">
+            <h5>
+              <b>{{ postId }}</b>
+            </h5>
+            <h2>{{ post.title }}</h2>
+            <h4>{{ post.body }}</h4>
+            <a>Edit</a>
+          </div>
+        </div> -->
+  </div>
+</div>
 
-    <div id="main-container" class=" mx-0 container-fluid position-fixed top-0 vh-100" *ngIf="!isEditing && !isCreating">
-      
-        <div class="d-grid gap-2 d-flex justify-content-between row">
-          <h2 class="card-header pb-3" >View Post</h2>
-            <button type="button" class="btn btn-primary col">Precedente</button>
-             <button type="button" class="btn btn-primary col">Successivo</button>
-        
-         <hr />
+<div class="container" *ngIf="isEditing && !isCreating">
+  <h2>Edit Post # {{ postId }}</h2>
+  <form
+    #form="ngForm"
+    class="px-3 py-4 rounded-3 text-white"
+    (ngSubmit)="modifyPost()"
+  >
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="title"
+        id="title"
+        name="title"
+        class="form-control"
+        [(ngModel)]="post.title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="body">body</label>
+      <input
+        type="body"
+        id="body"
+        name="body"
+        class="form-control"
+        [(ngModel)]="post.body"
+        style="height: 150px"
+      />
+    </div>
 
-        <div class="row custom-bg justify-content-between">
-            
-            <div class="card ">
-                <div class="col-4">
-                    <img 
-                    src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/14/yvA5SpUH-IMG-Worlds-1200x800.jpg"
-                    alt=""
-                    />
-                </div>
-                <div class="col-8 card-body">
-                    <div class="d-flex gap-4">
-                        <h5 >
-                            <b>{{ postId }}</b>
-                        </h5>
-                    </div>                   
-                    <h2>{{ post.title }}</h2>
-                    <h4>{{ post.body }}</h4> 
-                    <a>Edit</a>
-                    <hr />
-                </div>
-                
-            </div>
-        </div> 
+    <button
+      type="submit"
+      class="btn btn-dark mt-4 w-100"
+      [disabled]="form.invalid"
+    >
+      Edit
+    </button>
+  </form>
+</div>
+<div class="container" *ngIf="isCreating">
+  <h2>Create a new post!</h2>
+  <form
+    #form="ngForm"
+    class="px-3 py-4 rounded-3 text-white"
+    (ngSubmit)="createPost()"
+  >
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="title" id="title-create" name="title" class="form-control" />
     </div>
- </div>
-    
-    <div class="container" *ngIf="isEditing && !isCreating">
-      <h2>Edit Post # {{ postId }}</h2>
-      <form
-        #form="ngForm"
-        class="px-3 py-4 rounded-3 text-white"
-        (ngSubmit)="modifyPost()"
-      >
-        <div class="form-group">
-          <label for="title">Title</label>
-          <input
-            type="title"
-            id="title"
-            name="title"
-            class="form-control"
-            [(ngModel)]="post.title"
-          />
-        </div>
-        <div class="form-group">
-          <label for="body">body</label>
-          <input
-            type="body"
-            id="body"
-            name="body"
-            class="form-control"
-            [(ngModel)]="post.body"
-            style="height: 150px"
-          />
-        </div>
-    
-        <button
-          type="submit"
-          class="btn btn-dark mt-4 w-100"
-          [disabled]="form.invalid"
-        >
-          Edit
-        </button>
-      </form>
+    <div class="form-group">
+      <label for="body">body</label>
+      <input
+        type="body"
+        id="body-create"
+        name="body"
+        class="form-control"
+        style="height: 150px"
+      />
     </div>
-    <div class="container" *ngIf="isCreating">
-      <h2>Create a new post!</h2>
-      <form
-        #form="ngForm"
-        class="px-3 py-4 rounded-3 text-white"
-        (ngSubmit)="createPost()"
-      >
-        <div class="form-group">
-          <label for="title">Title</label>
-          <input type="title" id="title-create" name="title" class="form-control" />
-        </div>
-        <div class="form-group">
-          <label for="body">body</label>
-          <input
-            type="body"
-            id="body-create"
-            name="body"
-            class="form-control"
-            style="height: 150px"
-          />
-        </div>
-    
-        <button
-          type="submit"
-          class="btn btn-dark mt-4 w-100"
-          [disabled]="form.invalid"
-        >
-          Edit
-        </button>
-      </form>
-    </div>
-    
+
+    <button
+      type="submit"
+      class="btn btn-dark mt-4 w-100"
+      [disabled]="form.invalid"
+    >
+      Edit
+    </button>
+  </form>
+</div>

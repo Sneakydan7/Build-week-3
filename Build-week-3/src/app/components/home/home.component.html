@@ -1,4 +1,4 @@
-<div class="container-fluid p-0 position-fixed top">
+<div class="container-fluid p-0 position-fixed">
   <div class="row g-0 display-flex">
     <button class="collapse-button d-flex d-lg-none gap-1 collapse">
       <a
@@ -142,7 +142,7 @@
         <p class="mt-1 mt-xl-3 custom-text-color fs-6">
           {{ user.user.biografia }}
         </p>
-        <button class="btn btn-danger rounded-5" (click)="showEdit()">
+        <button class="btn btn-warning rounded-5 fw-bold" (click)="showEdit()">
           Edit Profile
         </button>
       </div>
@@ -221,28 +221,31 @@
                 <div class="col-md-4">
                   <img
                     src="../../../assets/Logo.png"
-                    class="img-fluid rounded-start"
+                    class="img-fluid rounded-start card-img-top"
                     alt="..."
                   />
                 </div>
                 <div class="col-md-8">
-                  <div class="card-body d-flex flex-column h-100">
-                    <h5 class="card-title fs-3 fw-bold">{{ elem.title }}</h5>
-                    <p class="card-text flex-grow-1">{{ elem.body }}</p>
+                  <div
+                    class="card-body d-flex flex-column h-100 pt-0 position-relative"
+                  >
                     <div class="card-button-container ms-auto">
-                      <button
-                        class="btn btn-warning rounded-circle"
-                        (click)="isEditingView(elem.id)"
-                      >
-                        <i class="bi bi-zoom-in"></i>
+                      <button class="bg-dark" (click)="isEditingView(elem.id)">
+                        <i class="bi bi-eye-fill"></i>
                       </button>
                       <button
-                        class="btn btn-warning rounded-circle"
+                        class="bg-dark"
                         (click)="isEditingChange(elem.id)"
                       >
                         <i class="bi bi-pencil-square"></i>
                       </button>
                     </div>
+                    <h5 class="card-title fs-3 fw-bold text-truncate">
+                      {{ elem.title }}
+                    </h5>
+                    <p class="card-text flex-grow-1 text-truncate">
+                      {{ elem.body }}
+                    </p>
                   </div>
                 </div>
               </div>
