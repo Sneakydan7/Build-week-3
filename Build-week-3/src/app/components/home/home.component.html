@@ -157,14 +157,14 @@
             id="bio"
             name="biografia"
             [(ngModel)]="user.user.biografia"
-            class="bg-dark text-light mb-2 rounded"
+            class="bg-dark text-light mb-2 rounded border-0 px-5 py-1"
           />
           <input
             type="text"
             id="img"
             name="image"
             [(ngModel)]="user.user.image"
-            class="bg-dark text-light rounded"
+            class="bg-dark text-light rounded border-0 px-5 py-1"
           />
 
           <button
@@ -172,6 +172,7 @@
             class="btn mt-4 pulsate-fwd"
             [disabled]="form.invalid"
             id="edit-prof"
+            (click)="modifiedAlert()"
           >
             Edit
           </button>
