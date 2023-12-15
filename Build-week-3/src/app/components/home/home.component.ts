@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { UserProfile } from 'src/app/models/user-profile';
+
 import {
   trigger,
   state,
@@ -86,10 +87,11 @@ export class HomeComponent implements OnInit {
     this.postsSrv.isCreating = false;
   }
 
-  isEditingView(id: number) {
+  isViewChange(id: number) {
     this.postsSrv.isEditing = false;
-    this.router.navigate(['/view', id]);
     this.postsSrv.isCreating = false;
+    this.postsSrv.isViewing = true;
+    this.router.navigate(['/view', id]);
   }
 
   modifyPage() {

@@ -1,23 +1,18 @@
 <div
   id="main-container"
-  class="mx-0 container-fluid position-fixed top-0 vh-100"
+  class="mx-0 container-fluid position-fixed top-0 vh-100 bg-dark"
   *ngIf="!isEditing && !isCreating"
 >
-  <div class="d-grid gap-2 d-flex justify-content-between row">
-    <h2 class="card-header pb-3">View Post</h2>
-    <button type="button" class="btn btn-primary col">Precedente</button>
-    <button type="button" class="btn btn-primary col">Successivo</button>
-
-    <hr />
-
-    <div class="row custom-bg justify-content-between">
-      <div class="card">
+  <div class="row d-grid gap-2 d-flex p-5 justify-content-center">
+    <h2
+      class="card-header p-3 text-center custom-text-color rounded-top-2 mb-3"
+    >
+      {{ post.title }}
+    </h2>
+    <div class="card m-3 custom-bg p-0">
+      <div class="row g-0">
         <div class="col-4">
-          <img
-            src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/14/yvA5SpUH-IMG-Worlds-1200x800.jpg"
-            class="img-fluid rounded-start"
-            alt="post-img"
-          />
+          <img src="{{ post.img }}" class="img-fluid rounded-start" alt="" />
         </div>
         <div class="col-8">
           <div class="card-body d-flex flex-column h-100">
@@ -64,6 +59,22 @@
       />
     </div>
 
+    <div class="form-group">
+      <img
+        src="{{ post.img }}"
+        alt=""
+        style="height: 150px; width: 150px"
+        *ngIf="post.img"
+      />
+      <label for="img">Change preview image</label>
+      <input
+        type="text"
+        id="img"
+        name="img"
+        class="form-control"
+        [(ngModel)]="post.img"
+      />
+    </div>
     <button
       type="submit"
       class="btn btn-dark mt-4 w-100"

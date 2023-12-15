@@ -20,7 +20,7 @@ export class ViewComponent implements OnInit {
   URL = environment.apiURL;
   isEditing = this.postSrv.isEditing;
   isCreating = this.postSrv.isCreating;
-
+  isViewing = this.postSrv.isViewing;
   constructor(
     private route: ActivatedRoute,
     private postSrv: PostsService,
@@ -29,7 +29,9 @@ export class ViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.isEditing) {
+    console.log(this.isViewing);
+    console.log(this.isEditing);
+    if (this.isEditing || this.isViewing) {
       this.route.params.subscribe((params) => {
         this.postId = +params['postId'];
         console.log(this.postId);
@@ -56,11 +58,14 @@ export class ViewComponent implements OnInit {
   modifyPost() {
     let title = document.getElementById('title') as HTMLInputElement;
     let body = document.getElementById('body') as HTMLInputElement;
+    let image = document.getElementById('img') as HTMLInputElement;
+
     this.modifyRequest(
       title.value,
       body.value,
       this.id,
-      this.postSrv.getUserId()
+      this.postSrv.getUserId(),
+      image.value
     );
   }
 
@@ -68,13 +73,15 @@ export class ViewComponent implements OnInit {
     titleMod: string,
     bodyMod: string,
     idMod: number,
-    userIdMod: number
+    userIdMod: number,
+    imgMod: string
   ) {
     const post: Posts = {
       title: titleMod,
       body: bodyMod,
       id: idMod,
       userId: userIdMod,
+      img: imgMod,
     };
 
     this.http

@@ -222,7 +222,7 @@
                   <img
                     src="{{ elem.img }}"
                     class="img-fluid rounded-start card-img-top"
-                    alt="..."
+                    alt=""
                   />
                 </div>
                 <div class="col-md-8">
@@ -230,7 +230,7 @@
                     class="card-body d-flex flex-column h-100 pt-0 position-relative"
                   >
                     <div class="card-button-container ms-auto">
-                      <button class="bg-dark" (click)="isEditingView(elem.id)">
+                      <button class="bg-dark" (click)="isViewChange(elem.id)">
                         <i class="bi bi-eye-fill"></i>
                       </button>
                       <button
