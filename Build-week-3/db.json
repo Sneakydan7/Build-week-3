@@ -38,11 +38,11 @@
     },
     {
       "email": "luca@utzeri.it",
-      "password": "$2a$10$yQwOhyHlx3UrJ1n1HJiNzuTtOAiKqpXKbtJ9wu64Kef5hnKU8zuii",
+      "password": "$2a$10$T92wDmuYcBXi5qm/xmA8QeD/JxIxp9/qK19p8CLzZQdxD4JZU.LjK",
       "name": "Luca",
       "lastName": "Utzeri",
       "biografia": "oooooooooo bella rega",
-      "image": "",
+      "image": "https://www.topolino.it/wp-content/uploads/2019/12/pippointera.png",
       "id": 7
     },
     {
