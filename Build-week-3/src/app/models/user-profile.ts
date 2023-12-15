@@ -4,6 +4,6 @@ export interface UserProfile {
   name?: string;
   lastName?: string;
   biografia?: string;
-  image?: string;
+  image: string | null;
   id?: number;
 }

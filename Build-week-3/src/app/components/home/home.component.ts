@@ -97,10 +97,11 @@ export class HomeComponent implements OnInit {
   modifyPage() {
     let body = document.getElementById('bio') as HTMLInputElement;
     let image = document.getElementById('img') as HTMLInputElement;
+
     this.modifyUser(this.id, body.value, image.value);
   }
 
-  modifyUser(userIdMod: number, bioMod: string, img: string) {
+  modifyUser(userIdMod: number, bioMod: string, img: string | null) {
     const user: UserProfile = {
       email: this.userProfile.email,
       password: this.postsSrv.password,
