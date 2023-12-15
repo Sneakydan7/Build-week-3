@@ -41,7 +41,11 @@ img {
 .custom-bg {
   background-color: #efebd1;
 }
-
+.custom-popup {
+  background-color: #f0ebce;
+  padding-block: 150px;
+  margin-inline: 100px;
+}
 // create post
 
 :host {
@@ -60,19 +64,14 @@ img {
   position: relative;
   z-index: 1;
 }
-.form-add::before {
-  content: "";
-  background-image: url("../../../assets/Logo.png");
-  background-size: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
+.form-img {
+  transform: translate(-17px, 15px);
+  width: 315px;
   position: absolute;
-  top: -100px;
-  right: 0;
   bottom: 0;
   left: 0;
   opacity: 0.3;
-  z-index: -1;
+  z-index: -19;
 }
 
 .form-control:focus {
@@ -81,6 +80,10 @@ img {
 
 .container-add {
   background-color: #323436;
+}
+
+.logo {
+  position: absolute;
 }
 
 .btnAdd {
