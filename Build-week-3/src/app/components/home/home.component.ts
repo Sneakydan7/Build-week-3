@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { UserProfile } from 'src/app/models/user-profile';
+
 import {
   trigger,
   state,
@@ -25,8 +26,8 @@ import { NgForm } from '@angular/forms';
     trigger('flipImage', [
       state('initial', style({ transform: 'scaleX(1)' })),
       state('flipped', style({ transform: 'scaleX(-1)' })),
-      transition('initial => flipped', animate('1s linear')),
-      transition('flipped => initial', animate('1s linear')),
+      transition('initial => flipped', animate('0.2s linear')),
+      transition('flipped => initial', animate('0.2s linear')),
     ]),
   ],
 })
@@ -53,6 +54,7 @@ export class HomeComponent implements OnInit {
     this.id = this.postsSrv.getUserId();
     this.getUserJSON();
     console.log(this.id);
+    console.log(this.postsSrv.password);
     this.http.get<Posts[]>(`${this.URL}/posts`).subscribe((res) => {
       let update: Posts[] = res.filter((user) => user.userId === this.id);
       this.posts = update;
@@ -85,10 +87,11 @@ export class HomeComponent implements OnInit {
     this.postsSrv.isCreating = false;
   }
 
-  isEditingView(id: number) {
+  isViewChange(id: number) {
     this.postsSrv.isEditing = false;
-    this.router.navigate(['/view', id]);
     this.postsSrv.isCreating = false;
+    this.postsSrv.isViewing = true;
+    this.router.navigate(['/view', id]);
   }
 
   modifyPage() {
@@ -99,6 +102,10 @@ export class HomeComponent implements OnInit {
 
   modifyUser(userIdMod: number, bioMod: string, img: string) {
     const user: UserProfile = {
+      email: this.userProfile.email,
+      password: this.postsSrv.password,
+      name: this.userProfile.name,
+      lastName: this.userProfile.lastName,
       biografia: bioMod,
       image: img,
       id: this.id,
