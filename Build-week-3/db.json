@@ -53,6 +53,17 @@
       "biografia": "ciao.",
       "image": "https://www.cartoni-animati.com/wp-content/uploads/paperino.jpg",
       "id": 8
+    },
+    {
+      "email": "123@123.com",
+      "password": "$2a$10$bxmVgyp2IlU4cTXCl4FxMuaam2zgBwpPIMaVEOgo2bhCZuoygwsrm",
+      "name": "kavidu",
+      "lastName": "francesco",
+      "confirmPassword": "ciao",
+      "gender": "uomo",
+      "biografia": "my portfolio",
+      "image": "https://images.unsplash.com/photo-1702571202424-84d58143cfcc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D",
+      "id": 9
     }
   ],
   "posts": [
@@ -538,34 +549,39 @@
       "body": "ex quod dolorem ea eum iure qui provident amet\nquia qui facere excepturi et repudiandae\nasperiores molestias provident\nminus incidunt vero fugit rerum sint sunt excepturi provident"
     },
     {
-      "userId": 9,
+      "title": "deserto",
+      "body": "Si estende dall'oceano Atlantico al Mar Rosso per una lunghezza di circa 5000 km, con l'unica interruzione della Valle del Nilo, e per una larghezza 1500-2000 km dal Mediterraneo fino alle regioni centrali dell'Africa, dove il passaggio da deserto a savana è a volte assai incerto e stabilito da fattori di ordine climatico.",
       "id": 81,
-      "title": "tempora rem veritatis voluptas quo dolores vero",
-      "body": "facere qui nesciunt est voluptatum voluptatem nisi\nsequi eligendi necessitatibus ea at rerum itaque\nharum non ratione velit laboriosam quis consequuntur\nex officiis minima doloremque voluptas ut aut"
+      "userId": 9,
+      "img": "https://images.unsplash.com/photo-1682685797818-c9dc151d241e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "userId": 9,
+      "title": "Oceano Atlantico",
+      "body": "Questo oceano occupa un bacino a forma di \"S\", disposto nella direzione nord-sud. È diviso in due sezioni principali, l'Atlantico del Nord e l'Atlantico del Sud, da correnti equatoriali poste a circa 8° di latitudine nord. È delimitato a ovest dal continente americano (sia dalla parte settentrionale che da quella meridionale) e, a est, dall'Europa e dall'Africa; tre suoi mari dipendenti, il Mediterraneo, il Mar Nero e il Mar Glaciale Artico, bagnano anche l'Asia.  Comunica con l'Oceano Pacifico sia a nord che a sud. Il collegamento settentrionale tra i due oceani avviene attraverso il Mar Glaciale Artico, mentre quello meridionale è permesso dallo stretto di Magellano, dal canale di Beagle e dal canale di Drake. Inoltre, esiste una connessione artificiale tra i due oceani, il canale di Panama, situato in corrispondenza dell'istmo che unisce le due Americhe. A est comunica con l'oceano Indiano, attraverso il capo Agulhas, al 20° E (e non dal capo di Buona Speranza, come si ritiene comunemente), ma anche attraverso il canale artificiale di Suez.  L'Atlantico copre il 20% della superficie terrestre ed è secondo solo al Pacifico come ampiezza. L'oceano propriamente detto copre un'area di circa 82362000 km², pari a otto volte quella dell'Europa, che raggiunge i 106 450 000 km² se si considerano anche i suoi mari adiacenti. Le terre occupate dal bacino idrografico dell'Atlantico sono quattro volte quelle del Pacifico o dell'Indiano. Il volume dell'oceano Atlantico è di 323600000 km³, e di 354700000 km³ considerando anche i mari adiacenti.  La profondità media (volume/superficie) dell'Atlantico è di 3926 m, ridotta a 3 332 m se si prendono in considerazione i mari adiacenti.",
       "id": 82,
-      "title": "laudantium voluptate suscipit sunt enim enim",
-      "body": "ut libero sit aut totam inventore sunt\nporro sint qui sunt molestiae\nconsequatur cupiditate qui iste ducimus adipisci\ndolor enim assumenda soluta laboriosam amet iste delectus hic"
+      "userId": 9,
+      "img": "https://images.unsplash.com/photo-1682686581551-867e0b208bd1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyNnx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "userId": 9,
+      "title": "Marte",
+      "body": "Marte è il quarto pianeta del sistema solare in ordine di distanza dal Sole;[4] è visibile a occhio nudo ed è l'ultimo dei pianeti di tipo terrestre dopo Mercurio, Venere e la Terra. Chiamato pianeta rosso per via del suo colore caratteristico causato dalla grande quantità di ossido di ferro che lo ricopre,[4] Marte prende il nome dall'omonima divinità della mitologia romana[4] e il suo simbolo astronomico è la rappresentazione stilizzata dello scudo e della lancia del dio (; Unicode: ♂).",
       "id": 83,
-      "title": "odit et voluptates doloribus alias odio et",
-      "body": "est molestiae facilis quis tempora numquam nihil qui\nvoluptate sapiente consequatur est qui\nnecessitatibus autem aut ipsa aperiam modi dolore numquam\nreprehenderit eius rem quibusdam"
+      "userId": 9,
+      "img": "https://images.unsplash.com/photo-1573588028698-f4759befb09a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWFydGV8ZW58MHx8MHx8fDA%3D"
     },
     {
-      "userId": 9,
+      "title": "chat GPT",
+      "body": "ChatGPT è un modello di linguaggio sviluppato da OpenAI, messo a punto con tecniche di apprendimento automatico (di tipo non supervisionato) e ottimizzato con tecniche di apprendimento supervisionato e per rinforzo[5][6], elaborato per essere utilizzato come base per la creazione di altri modelli di machine learning. ChatGPT è stato addestrato a partire dai modelli Instruct GPT o GPT-3.5[7] di OpenAI, che sono l'evoluzione dei modelli di GPT-3. Gli Instruct GPT (come code-davinci-002, text-davinci-002, text-davinci-003[8]) sono modelli in cui il pre-addestramento è stato ottimizzato manualmente da addestratori umani. Nello specifico ChatGPT è stato sviluppato da un GPT-3.5 utilizzando l'apprendimento supervisionato e l'apprendimento per rinforzo[9]. Il 14 marzo 2023 è stata annunciata l'introduzione di GPT-4, un modello multimodale su larga scala che può accettare input di immagini, video, audio e testo e produrre output di testo",
       "id": 84,
-      "title": "optio ipsam molestias necessitatibus occaecati facilis veritatis dolores aut",
-      "body": "sint molestiae magni a et quos\neaque et quasi\nut rerum debitis similique veniam\nrecusandae dignissimos dolor incidunt consequatur odio"
+      "userId": 9,
+      "img": "https://images.unsplash.com/photo-1679403766669-17890714e491?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDM4MnxhZXU2ckwtajZld3x8ZW58MHx8fHx8"
     },
     {
-      "userId": 9,
+      "title": "",
+      "body": "",
       "id": 85,
-      "title": "dolore veritatis porro provident adipisci blanditiis et sunt",
-      "body": "similique sed nisi voluptas iusto omnis\nmollitia et quo\nassumenda suscipit officia magnam sint sed tempora\nenim provident pariatur praesentium atque animi amet ratione"
+      "userId": 9,
+      "img": ""
     },
     {
       "userId": 9,
