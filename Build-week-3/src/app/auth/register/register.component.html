@@ -173,6 +173,15 @@
           I have read and agreed with terms and conditions
         </label>
       </div>
+      <div
+        *ngIf="
+          registerForm.get('privacyAccepted')?.hasError('requiredTrue') &&
+          registerForm.get('privacyAccepted')?.touched
+        "
+        class="text-danger"
+      >
+        You must accept the privacy terms.
+      </div>
 
       <button
         type="submit"
