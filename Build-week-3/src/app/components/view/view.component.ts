@@ -87,11 +87,13 @@ export class ViewComponent implements OnInit {
   createPost() {
     let title = document.getElementById('title-create') as HTMLInputElement;
     let body = document.getElementById('body-create') as HTMLInputElement;
+    let image = document.getElementById('img-create') as HTMLInputElement;
     this.createRequest(
       this.postSrv.getUserId(),
       title.value,
       body.value,
-      this.id
+      this.id,
+      image.value
     );
   }
 
@@ -99,13 +101,15 @@ export class ViewComponent implements OnInit {
     userIdPost: number,
     titlePost: string,
     bodyPost: string,
-    idPost: number
+    idPost: number,
+    imgPost: string
   ) {
     const newPost: Posts = {
       userId: userIdPost,
       title: titlePost,
       body: bodyPost,
       id: idPost,
+      img: imgPost,
     };
 
     console.log(newPost);
