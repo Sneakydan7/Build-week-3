@@ -113,7 +113,7 @@
       id="side-bar"
       class="col-3 d-none d-lg-flex flex-column sidebar-color text-center p-3 custom-text-color position-relative vh-100 justify-content-evenly"
     >
-      <h1 class="custom-text-color">
+      <h1 class="custom-text-color text-shadow-pop-bottom">
         {{ user.user.name }} {{ user.user.lastName }}
       </h1>
 
@@ -221,12 +221,12 @@
       <div class="overflow-y-auto" id="section">
         <div class="bg-dark row px-5">
           <div class="col-12" *ngFor="let elem of posts">
-            <div class="card mb-3 mt-5 shadow-box d-flex">
+            <div class="card mb-3 mt-5 shadow-box d-flex slide-in-left">
               <div class="row g-0">
                 <div class="col-md-4">
                   <img
                     src="{{ elem.img }}"
-                    class="img-fluid rounded-start card-img-top"
+                    class="img-fluid rounded-start card-img-top object-fit-cover"
                     style="width: 100%; height: 300px"
                     alt=""
                   />
@@ -236,20 +236,23 @@
                     class="card-body d-flex flex-column h-100 pt-0 position-relative"
                   >
                     <div class="card-button-container ms-auto">
-                      <button class="bg-dark" (click)="isViewChange(elem.id)">
+                      <button
+                        class="bg-dark bookmark"
+                        (click)="isViewChange(elem.id)"
+                      >
                         <i class="bi bi-eye-fill"></i>
                       </button>
                       <button
-                        class="bg-dark"
+                        class="bg-dark bookmark"
                         (click)="isEditingChange(elem.id)"
                       >
                         <i class="bi bi-pencil-square"></i>
                       </button>
                     </div>
-                    <h5 class="card-title fs-3 fw-bold text-truncate">
+                    <h5 class="card-title fs-3 fw-bold text-truncate mt-3">
                       {{ elem.title }}
                     </h5>
-                    <p class="card-text flex-grow-1 text-truncate">
+                    <p class="card-text flex-grow-1 text-truncate mt-3">
                       {{ elem.body }}
                     </p>
                   </div>
